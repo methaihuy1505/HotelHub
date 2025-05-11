@@ -1,11 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HotelHub</title>
+    <link
+      rel="stylesheet"
+      href="vendor/fontawesome-free-5.11.2-web/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="vendor/bootstrap-3.3.7/dist/css/bootstrap.min.css"
+    />
+    <script src="vendor/bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
 </head>
 <body>
-    
+    <header>
+        <div class="branch-select">
+            <label for="branch">Select Branch</label>
+            <select id="branch">
+                <option value="branch1">BÌNH DÂN</option>
+                </select>
+        </div>
+        <div class="check-in">
+            <label for="checkin">Check in</label>
+            <input type="date" id="checkin">
+        </div>
+        <div class="check-out">
+            <label for="checkout">Check out</label>
+            <input type="date" id="checkout">
+        </div>
+        <div class="booking-summary">
+            <img src="notification_icon.png" alt="Booking Summary">
+            <span class="item-count">1</span>
+        </div>
+    </header>
+    <div class="container">
+        <aside class="filter-sidebar">
+            <div class="filter-group">
+                <h3>Khoảng giá</h3>
+                <select>
+                    <option>BÌNH DÂN</option>
+                    </select>
+                <label><input type="radio" name="price" value="range1"> ... VND</label>
+                <label><input type="radio" name="price" value="range2"> ... VND</label>
+                <label><input type="radio" name="price" value="range3"> ... VND</label>
+            </div>
+            <div class="filter-group">
+                <h3>Đánh giá sao</h3>
+                <label><input type="checkbox" value="1"> 1 <span class="star">★</span></label>
+                <label><input type="checkbox" value="2"> 2 <span class="star">★★</span></label>
+                </div>
+            </aside>
+        <main class="room-listings">
+            <div class="room-card">
+                <div class="room-image">
+                    <img src="room1.jpg" alt="V.I.P 1 Room">
+                </div>
+                <div class="room-details">
+                    <h3>V.I.P 1 Room</h3>
+                    <div class="rating">★★★★★</div>
+                    <ul>
+                        <li><input type="checkbox" checked disabled> Máy lạnh</li>
+                        <li><input type="checkbox" checked disabled> Tủ lạnh</li>
+                        <li><input type="checkbox" checked disabled> Nhà bếp</li>
+                        <li><input type="checkbox" checked disabled> Bồn tắm</li>
+                    </ul>
+                    <div class="price">938.129 VND</div>
+                    <button>Chọn Phòng</button>
+                </div>
+            </div>
+            </main>
+    </div>
 </body>
 </html>
