@@ -1,0 +1,152 @@
+@font-face {
+    font-family: Inter-Italic;
+    src: url(../fonts/Inter/Inter-Italic-VariableFont_opsz\,wght.ttf);
+}
+@font-face {
+    font-family: Inter;
+    src: url(../fonts/Inter/Inter-VariableFont_opsz\,wght.ttf);
+}
+body{
+    font-family: Inter;
+    background-color: #F4EDED;
+}
+
+
+
+.filter-group {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.filter-group h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.star {
+    color: gold;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.card-title .star {
+    font-size: 1em;
+    margin-left: 5px;
+}
+
+.card-body ul {
+    padding-left: 20px;
+}
+
+.card-body ul li {
+    margin-bottom: 5px;
+}
+
+/* Add more specific styling to match the image's colors and layout */
+.col-md-3.mb-2.mb-md-0{
+    padding-top: 5px;
+}
+.form-check{
+    margin-top: 10px;
+}
+.container.mt-4{
+    padding: 0px;
+    margin-top: 30px;
+}
+.container.py-3{
+    margin-left: auto;
+    margin-right: auto;
+    background-color:#FFFFFF;
+}
+
+.btn.btn-outline-secondary{
+    height: 50px;
+}
+.check-in,.check-out{
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center
+}
+.check-in label,.check-out label{
+    width: 120px;
+    text-align: center;
+    margin-top: 10px;
+    margin-right: 5px;
+}
+.form-control.form-control-sm{
+    height: 50px;
+}
+.row > .col-md-3.text-right { 
+    width: 150px;
+    flex: 0 0 auto !important; 
+}
+.container .filter-group:nth-child(3) .form-check>label:nth-child(2){
+    font-size:20px;
+    color: #318B27;
+}
+.container .filter-group:nth-child(3) .form-check>input{
+    margin-top: 9px;
+
+}
+.card{
+    margin-bottom: 20px;
+    border-radius: 30px;
+    background-color: #D9D9D9;
+}
+.col-md-8{
+    display: flex;
+}
+
+
+.d-flex{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    padding-left: 10px;
+    border-left: 1px solid black;
+}
+.card-text{
+    margin-top: 90px;
+    padding-left: -10px;
+    margin-right: 10px;
+    font-size: 21px;
+    color: gold;
+
+}
+
+.card-text>strong{
+    text-shadow:
+    -1px -1px 0 #000,
+     0   -1px 0 #000,
+     1px -1px 0 #000,
+     1px  0   0 #000,
+     1px  1px 0 #000,
+     0    1px 0 #000,
+    -1px  1px 0 #000,
+    -1px  0   0 #000;
+}
+.card-text1{
+    position: absolute;
+    margin-top: 70px;
+    margin-left: 75px;
+    padding: 0px;
+    font-size: 13px;
+    text-decoration:1.5px line-through black;
+}
+.btn.btn-warning.btn-sm{
+    background-color: #2C2C2C;
+    color: #FFFFFF;
+    border: 0px;
+    border-radius: 5px;
+    margin-left: -20px;
+}
