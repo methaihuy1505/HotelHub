@@ -16,19 +16,6 @@
   src: url(../fonts/Inter/static/Inter_18pt-Bold.ttf);
 }
 
-/* Keyframe */
-
-/* @keyframes navAnimation {
-  from {
-    opacity: 0;
-    transform: translateY(-10%);
-  }
-  to {
-    opacity: 0.8;
-    transform: translateY(0);
-  }
-} */
-
 /* Declare color */
 
 :root {
@@ -90,9 +77,15 @@ img[alt="logo"] {
 .container {
   max-width: inherit;
 }
+
+.navbar .nav-link {
+  transition: all 0.5s ease;
+}
+
 .navbar .nav-link:hover {
-  background-color: var(--secondary-color);
-  color: var(--primary-color) !important;
+  transform: translate(5px, -5px);
+  color: var(--secondary-color);
+  border-bottom: 2px solid var(--fifth-color);
 }
 .navbar .navbar-collapse {
   transition: all 0.5s ease;
@@ -182,5 +175,9 @@ footer {
     width: 100%;
     left: 0;
     opacity: 0;
+  }
+  .navbar .nav-link:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color) !important;
   }
 }
