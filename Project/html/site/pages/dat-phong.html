@@ -21,240 +21,7 @@
 
 </head>
 <body>
-    <!-- <div class="container-fluid bg-light py-3">
-        <div class="container d-flex align-items-center justify-content-between">
-            <div class="branch-select">
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Dropdown
-                    </button>
-                    <ul class="dropdown-menu">
-                      <li><button class="dropdown-item" type="button">Action</button></li>
-                      <li><button class="dropdown-item" type="button">Another action</button></li>
-                      <li><button class="dropdown-item" type="button">Something else here</button></li>
-                    </ul>
-                  </div>
-            </div>
-                <div class="check-in">
-                    <label for="checkin">Check in</label>
-                    <input type="date" class="form-control form-control-sm" id="checkin">
-                </div>
-                <div class="check-out">
-                    <label for="checkout">Check out</label>
-                    <input type="date" class="form-control form-control-sm" id="checkout">
-                </div>
-            <div class="booking-summary">
-                <i class="fas fa-file-invoice-dollar fa-2x"></i>
-                <span class="badge badge-danger rounded-circle">1</span>
-            </div>
-        </div>
-    </div >
-
-    <div class="container mt-4">
-        <div class="row">
-            <aside class="col-md-3">
-                <div class="filter-group mb-3">
-                    <h3>Khoảng giá</h3>
-                    <select class="form-control form-control-sm mb-2">
-                        <option>BÌNH DÂN</option>
-                        <option>TIÊU CHUẨN</option>
-                        <option>V.I.P</option>
-
-                    </select>
-                    <div class="form-check">
-                        <input type="radio" class="form-check-input" name="price" id="price1">
-                        <label class="form-check-label" for="price1">250.000-300.000 VND</label>
-                    </div>
-                    <div class="form-check">
-                        <input type="radio" class="form-check-input" name="price" id="price2">
-                        <label class="form-check-label" for="price2">250.000-300.000 VND</label>
-                    </div>
-                    <div class="form-check">
-                        <input type="radio" class="form-check-input" name="price" id="price3">
-                        <label class="form-check-label" for="price3">250.000-300.000 VND</label>
-                    </div>
-                </div>
-
-                <div class="filter-group mb-3">
-                    <h3>Đánh giá sao</h3>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="star1">
-                        <label class="form-check-label" for="star1">1 <span class="star">★</span></label>
-                    </div>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="star2">
-                        <label class="form-check-label" for="star2">2 <span class="star">★★</span></label>
-                    </div>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="star3">
-                        <label class="form-check-label" for="star3">3 <span class="star">★★★</span></label>
-                    </div>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="star4">
-                        <label class="form-check-label" for="star4">4 <span class="star">★★★★</span></label>
-                    </div>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="star5">
-                        <label class="form-check-label" for="star5">5 <span class="star">★★★★★</span></label>
-                    </div>
-                </div>
-
-                <div class="filter-group mb-3">
-                    <h3>Đánh giá từ khách</h3>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="review1" >
-                        <label class="form-check-label" for="review1"><i class="fas"></i>+7</label>
-                        <label class="form-check-label" for="review1"><i class="fas"></i>Thuận tiện</label>
-
-                    </div>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="review2" >
-                        <label class="form-check-label" for="review2"><i class="fas"></i>+8</label>
-                        <label class="form-check-label" for="review2"><i class="fas"></i>Ấn tượng</label>
-                    </div>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="review3">
-                        <label class="form-check-label" for="review3"><i class="fas"></i>+9</label>
-                        <label class="form-check-label" for="review3"><i class="fas"></i>Tuyệt hảo</label>
-
-                    </div>
-                </div>
-
-                <div class="filter-group mb-3">
-                    <h3>Tiện nghi phòng</h3>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="amenity1" >
-                        <label class="form-check-label" for="amenity1">Máy lạnh</label>
-                    </div>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="amenity2">
-                        <label class="form-check-label" for="amenity2">Tủ lạnh</label>
-                    </div>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="amenity3" >
-                        <label class="form-check-label" for="amenity3">Nhà bếp</label>
-                    </div>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="amenity4">
-                        <label class="form-check-label" for="amenity4">Máy sưởi</label>
-                    </div>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="amenity5">
-                        <label class="form-check-label" for="amenity5">Bồn tắm</label>
-                    </div>
-                </div>
-            </aside>
-
-            <main class="col-md-9">
-                <div class="row row-cols-1 g-3">
-                    <div class="col">
-                        <div class="card">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <img src="https://via.placeholder.com/300x200" class="img-fluid rounded-start" alt="V.I.P 1 Room">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body d-flex flex-column justify-content-between h-100">
-                                        <div>
-                                            <h5 class="card-title">V.I.P 1 Room <span class="star">★★★★★</span></h5>
-                                            <ul class="list-unstyled">
-                                                <li><i class="fas fa-check-square text-success"></i> Máy lạnh</li>
-                                                <li><i class="fas fa-check-square text-success"></i> Tủ lạnh</li>
-                                                <li><i class="fas fa-check-square text-success"></i> Nhà bếp</li>
-                                                <li><i class="fas fa-check-square text-success"></i> Bồn tắm</li>
-                                            </ul>
-                                        </div>
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <p class="card-text"><small class="text-muted">938.129 VND</small></p>
-                                            <button class="btn btn-warning">Chọn Phòng</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <img src="https://via.placeholder.com/300x200" class="img-fluid rounded-start" alt="V.I.P 1 Room">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body d-flex flex-column justify-content-between h-100">
-                                        <div>
-                                            <h5 class="card-title">V.I.P 1 Room <span class="star">★★★★★</span></h5>
-                                            <ul class="list-unstyled">
-                                                <li><i class="fas fa-check-square text-success"></i> Máy lạnh</li>
-                                                <li><i class="fas fa-check-square text-success"></i> Tủ lạnh</li>
-                                                <li><i class="fas fa-check-square text-success"></i> Nhà bếp</li>
-                                                <li><i class="fas fa-check-square text-success"></i> Bồn tắm</li>
-                                            </ul>
-                                        </div>
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <p class="card-text"><small class="text-muted">938.129 VND</small></p>
-                                            <button class="btn btn-warning">Chọn Phòng</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <img src="https://via.placeholder.com/300x200" class="img-fluid rounded-start" alt="V.I.P 1 Room">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body d-flex flex-column justify-content-between h-100">
-                                        <div>
-                                            <h5 class="card-title">V.I.P 1 Room <span class="star">★★★★★</span></h5>
-                                            <ul class="list-unstyled">
-                                                <li><i class="fas fa-check-square text-success"></i> Máy lạnh</li>
-                                                <li><i class="fas fa-check-square text-success"></i> Tủ lạnh</li>
-                                                <li><i class="fas fa-check-square text-success"></i> Nhà bếp</li>
-                                                <li><i class="fas fa-check-square text-success"></i> Bồn tắm</li>
-                                            </ul>
-                                        </div>
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <p class="card-text"><small class="text-muted">938.129 VND</small></p>
-                                            <button class="btn btn-warning">Chọn Phòng</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <img src="https://via.placeholder.com/300x200" class="img-fluid rounded-start" alt="V.I.P 1 Room">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body d-flex flex-column justify-content-between h-100">
-                                        <div>
-                                            <h5 class="card-title">V.I.P 1 Room <span class="star">★★★★★</span></h5>
-                                            <ul class="list-unstyled">
-                                                <li><i class="fas fa-check-square text-success"></i> Máy lạnh</li>
-                                                <li><i class="fas fa-check-square text-success"></i> Tủ lạnh</li>
-                                                <li><i class="fas fa-check-square text-success"></i> Nhà bếp</li>
-                                                <li><i class="fas fa-check-square text-success"></i> Bồn tắm</li>
-                                            </ul>
-                                        </div>
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <p class="card-text"><small class="text-muted">938.129 VND</small></p>
-                                            <button class="btn btn-warning">Chọn Phòng</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </main>
-        </div>
-    </div> -->
+    
     <header class=" py-2">
         
     </header>
@@ -392,11 +159,11 @@
                         <div class="card">
                             <div class="row no-gutters align-items-center">
                                 <div class="col-md-4">
-                                    <img src="img/room1.jpg" class="card-img rounded-left" alt="V.I.P 1 Room">
+                                    <img src="../image/datphong_img.png" class="card-img rounded-left" alt="V.I.P 1 Room">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">
-                                        <h5 class="card-title">V.I.P 1 Room <span class="star">★★★★★</span></h5>
+                                        <h5 class="card-title">V.I.P 1 Room <span class="star"><br>★★★★★</span></h5>
                                         <ul class="list-unstyled">
                                             <li><i class="fa fa-check-square text-success mr-1"></i> Máy lạnh</li>
                                             <li><i class="fa fa-check-square text-success mr-1"></i> Tủ lạnh</li>
@@ -418,11 +185,11 @@
                         <div class="card">
                             <div class="row no-gutters align-items-center">
                                 <div class="col-md-4">
-                                    <img src="img/room1.jpg" class="card-img rounded-left" alt="V.I.P 1 Room">
+                                    <img src="../image/datphong_img.png" class="card-img rounded-left" alt="V.I.P 1 Room">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">
-                                        <h5 class="card-title">V.I.P 1 Room <span class="star">★★★★★</span></h5>
+                                        <h5 class="card-title">V.I.P 1 Room <span class="star"><br>★★★★★</span></h5>
                                         <ul class="list-unstyled">
                                             <li><i class="fa fa-check-square text-success mr-1"></i> Máy lạnh</li>
                                             <li><i class="fa fa-check-square text-success mr-1"></i> Tủ lạnh</li>
@@ -444,11 +211,11 @@
                         <div class="card">
                             <div class="row no-gutters align-items-center">
                                 <div class="col-md-4">
-                                    <img src="img/room1.jpg" class="card-img rounded-left" alt="V.I.P 1 Room">
+                                    <img src="../image/datphong_img.png" class="card-img rounded-left" alt="V.I.P 1 Room">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">
-                                        <h5 class="card-title">V.I.P 1 Room <span class="star">★★★★★</span></h5>
+                                        <h5 class="card-title">V.I.P 1 Room <span class="star"><br>★★★★★</span></h5>
                                         <ul class="list-unstyled">
                                             <li><i class="fa fa-check-square text-success mr-1"></i> Máy lạnh</li>
                                             <li><i class="fa fa-check-square text-success mr-1"></i> Tủ lạnh</li>
@@ -470,11 +237,11 @@
                         <div class="card">
                             <div class="row no-gutters align-items-center">
                                 <div class="col-md-4">
-                                    <img src="img/room1.jpg" class="card-img rounded-left" alt="V.I.P 1 Room">
+                                    <img src="../image/datphong_img.png" class="card-img rounded-left" alt="V.I.P 1 Room">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">
-                                        <h5 class="card-title">V.I.P 1 Room <span class="star">★★★★★</span></h5>
+                                        <h5 class="card-title">V.I.P 1 Room <span class="star"><br>★★★★★</span></h5>
                                         <ul class="list-unstyled">
                                             <li><i class="fa fa-check-square text-success mr-1"></i> Máy lạnh</li>
                                             <li><i class="fa fa-check-square text-success mr-1"></i> Tủ lạnh</li>
