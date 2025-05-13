@@ -1,0 +1,166 @@
+*,p
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+@font-face{
+	font-family: Infer-Regular;
+	src:url(..fonts/static/Inter_28pt-Regular.ttf);
+}
+@font-face{
+	font-family: Infer-Bold;
+	src:url(..fonts/static/Inter_18pt-Bold.ttf);
+}
+@font-face{
+	font-family: Infer-Medium;
+	src:url(..fonts/static/Inter_18pt-Medium.ttf);
+}
+body
+{
+    font-family: Infer-Regular,Infer-Bold;
+    font-size: 22px;
+    background-color: #F5F5F5;
+}
+main .container
+{
+    max-width: 1440px;
+}
+.sidebar a
+{
+    color: black;
+    margin: 10px 0;
+} 
+.sidebar a:hover {
+    background-color: #a9a9a9; 
+    color: #fff; 
+}
+.card-custom .card-body input:not([type="radio"])
+{
+    height: 100px;
+    background-color: #F5F5F5;
+}
+.viproom .room-item,.bill .bill-item
+{
+    display: flex;
+    border: 2px solid black;
+
+}
+.viproom img
+{
+    margin: 10px;
+}
+.card-custom .card-body img
+{
+    width: 177px;
+    border-radius: 15px;
+    margin-bottom: 6px;
+    margin-right: 6px;
+}
+#sidebar img
+{
+    border-radius: 50%;
+}
+.card h5
+{
+    font-size: 32px;
+    font-family: Infer-Bold;
+    font-weight: bold;
+}
+.card a
+{
+    display: block;
+    text-decoration: none;
+}
+.card .gioitinh
+{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    gap:10px;
+    font-size: 25px;
+}
+.card h6
+{
+    margin: 0;
+    margin-bottom: 8px;
+    font-size: 28px;
+    font-family: Infer-Bold;
+    font-weight: bold;
+}
+.card button
+{
+    width: 120px;
+    height:50px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 22px;
+    border: 0;
+}
+.form-control::placeholder {
+    color: #6c757d; 
+    font-style:Infer-Regular;
+    font-size:22px;
+    opacity: 0.7;
+}
+
+.form-control:placeholder-shown {
+    border-color: #ced4da; 
+}
+.room-item-info,.bill-item
+{
+    font-size: 18px;
+}
+.room-item-info,.bill-item_info
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.room-item-info a
+{
+    margin-top: 20px;
+}
+.bill-item_info p:nth-child(4)
+{
+  font-size: 22px;
+  font-weight: bold;
+}
+.bill-item_status img
+{
+    max-width: 35px;
+    height: 35px;
+}
+.bill-item_status div:nth-child(1)
+{
+    display: flex;
+    margin-bottom: 55px;
+    margin-top: 8px;
+    margin-right: 8px;
+}
+.bill .bill-item_status p
+{
+    margin-right: 9px;
+}
+bill.bill-item
+{
+    position: relative;
+}
+.bill .bill-item_status
+{
+    position: absolute;
+    right: 15px;
+}
+@media (max-width: 768px) {
+    #sidebar
+    {
+        display: none;
+        width: 100%;
+    }
+}   
+@media (max-width: 656px) {
+    .bill-item_status
+    {
+        display: none;
+    }
+}  
