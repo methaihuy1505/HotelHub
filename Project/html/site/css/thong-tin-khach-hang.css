@@ -84,6 +84,7 @@ main .container
 {
     margin: 0;
     margin-bottom: 8px;
+    margin-right: auto;
     font-size: 28px;
     font-family: Infer-Bold;
     font-weight: bold;
@@ -142,15 +143,11 @@ main .container
 {
     margin-right: 9px;
 }
-bill.bill-item
-{
-    position: relative;
-}
 .bill .bill-item_status
 {
-    position: absolute;
-    right: 15px;
+    margin-left: auto;
 }
+
 @media (max-width: 768px) {
     #sidebar
     {
