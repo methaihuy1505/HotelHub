@@ -121,6 +121,7 @@ body.modal-open {
 .navbar {
   background-color: #fff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 999;
 }
 
 .dummy-padding {
@@ -173,7 +174,7 @@ img[alt="logo"] {
   transform: translateY(0);
 }
 
-/* Main */
+/* HomePage */
 
 .hero {
   display: flex;
@@ -253,6 +254,48 @@ img[alt="logo"] {
 
 .icon-bounce {
   animation: bounce 0.5s infinite;
+}
+
+/* Payment */
+.payment {
+  background-color: #faeded;
+  border-radius: 8px;
+  margin: 2rem 0rem;
+  padding: 2rem;
+  padding-bottom: 0;
+  box-sizing: border-box;
+}
+.payment + button {
+  width: 100%;
+  color: var(--primary-color) !important;
+  background: #f65757 !important;
+  border: 2px solid var(--fifth-color) !important;
+  border-radius: 8px !important;
+  margin-bottom: 2rem;
+}
+.payment-info {
+  padding: 1rem 0;
+  margin: 0 2rem;
+  box-sizing: border-box;
+}
+.payment-option {
+  display: block; /* Hiển thị theo chiều dọc */
+  background-color: #eeb3b3; /* Màu nền */
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px; /* Tạo khoảng cách giữa hai lựa chọn */
+  cursor: pointer;
+}
+
+.payment-option input {
+  margin-right: 10px;
+}
+
+.title-box {
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  margin: 1rem;
 }
 
 /* Footer */

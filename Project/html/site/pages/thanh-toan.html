@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HotelHub - MeMe Hotel</title>
+    <link
+      rel="stylesheet"
+      href="../vendor/fontawesome-free-5.11.2-web/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container">
+        <a class="navbar-brand ml-1" href="#"
+          ><img src="../images/Logo.png" alt="logo" />HotelHub</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#menuCollapse"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuCollapse">
+          <ul id="nav-links" class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link p-2" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link p-2" href="#">Rooms</a></li>
+            <li class="nav-item">
+              <a class="nav-link p-2" href="#">Feedback</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link p-2" href="#">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link p-2"
+                data-toggle="modal"
+                data-target="#authModal"
+                href="#"
+                ><i class="fas fa-user"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Main -->
+    <div class="container-fluid">
+      <div class="row justify-content-between">
+        <div class="col-lg-7">
+          <form>
+            <div class="payment">
+              <h2>Hình thức thanh toán</h2>
+              <div class="form-group">
+                <label for="cash" class="payment-option">
+                  <input type="radio" name="payment" id="cash" />
+                  Tiền mặt
+                </label>
+                <label for="momo" class="payment-option">
+                  <input type="radio" name="payment" id="momo" />
+                  MoMo
+                </label>
+              </div>
+              <div class="row align-items-center">
+                <div class="col-md-8">
+                  <input
+                    type="text"
+                    class="form-control mb-2"
+                    placeholder="Tên khách hàng"
+                  />
+                  <input
+                    type="text"
+                    class="form-control mb-2"
+                    placeholder="Số điện thoại"
+                  />
+                  <input
+                    type="email"
+                    class="form-control mb-2"
+                    placeholder="Email"
+                  />
+                </div>
+                <div class="col-md-4 text-center">
+                  <img
+                    src="../images/room1.png"
+                    alt="QR Thanh toán"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+              <div class="form-group d-flex align-items-start">
+                <input type="checkbox" id="updates" class="mt-1" />
+                <div class="ml-2">
+                  <label for="updates">
+                    Tôi đồng ý nhận thông tin cập nhật và chương trình khuyến
+                    mãi về HotelHub và các chi nhánh hoặc đối tác kinh doanh của
+                    HotelHub thông qua nhiều kênh, bao gồm WhatsApp. Có thể nhận
+                    thông tin bất cứ lúc nào. Đọc thêm trong Chính sách Quyền
+                    riêng tư.
+                  </label>
+                  <p>
+                    Thực hiện bước tiếp theo đồng nghĩa với việc quý khách chấp
+                    nhận tuân theo Điều khoản Sử dụng và Chính sách Quyền riêng
+                    tư của HotelHub.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <button class="btn btn-primary">ĐẶT NGAY</button>
+          </form>
+        </div>
+        <div class="col-lg-4 payment-info">
+          <div class="title-box">
+            <h2>Khách Sạn HOTELHUB</h2>
+            <p>
+              <strong>Ngày đặt phòng:</strong> T7, 26 tháng 4 - T4, 6 tháng 5
+            </p>
+            <p><strong>Loại phòng:</strong> 1 x giường đôi</p>
+            <p><strong>Phòng cuối cùng ở mức giá này!</strong></p>
+          </div>
+
+          <div class="title-box">
+            <h3>Chi tiết giá</h3>
+
+            <p><del>Giá gốc: 1.700.234đ</del></p>
+            <p>Giá giảm: 1.382.299đ</p>
+            <p><strong>Phí đặt trước:</strong> MIỄN PHÍ</p>
+            <p>
+              <strong>Tổng tiền:</strong> 1.567.447đ (đã bao gồm thuế 8% & phí
+              dịch vụ 5%)
+            </p>
+            <p>Lựa chọn thông minh! Bạn đã tiết kiệm được 318.005đ</p>
+          </div>
+          <div class="title-box">
+            <h3>Chính sách hủy phòng</h3>
+
+            <p>
+              Đặt chỗ không rủi ro! Quý khách có thể dễ dàng hủy hoặc thay đổi
+              đơn đặt phòng miễn phí.
+            </p>
+          </div>
+          <div class="title-box">
+            <h3>Hỗ trợ trực tuyến</h3>
+            <p>HotelHub hỗ trợ 24/7 theo ngôn ngữ của quý khách.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+      <div class="container">
+        <p>&copy; HotelHub.com | All Rights Reserved</p>
+        <p>
+          <a href="#">About Us</a> | <a href="#">Contact Us</a> |
+          <a href="#">Privacy</a>
+        </p>
+        <div>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+      </a>
+    </footer>
+    <!-- Modal Box -->
+    <div
+      class="modal fade"
+      id="authModal"
+      tabindex="-1"
+      aria-labelledby="authModalLabel"
+      aria-hidden="true"
+      data-keyboard="true"
+    >
+      <div class="modal-dialog slide-down">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="d-flex justify-content-between w-100">
+              <h5 class="modal-title" id="authModalLabel">Đăng nhập</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          </div>
+          <div class="modal-body">
+            <div class="d-flex justify-content-between">
+              <button id="showLogin" class="btn btn-secondary">
+                Đăng nhập
+              </button>
+              <button id="showRegister" class="btn btn-secondary">
+                Đăng ký
+              </button>
+            </div>
+            <hr />
+            <div id="loginForm">
+              <form>
+                <div class="form-group">
+                  <label for="email">Email hoặc Tên đăng nhập</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="email"
+                    placeholder="Nhập email hoặc tên đăng nhập"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="password">Mật khẩu</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    placeholder="Nhập mật khẩu"
+                  />
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">
+                  Đăng nhập
+                </button>
+                <div class="text-center mt-3">
+                  <a href="#">Quên mật khẩu?</a>
+                </div>
+              </form>
+              <hr />
+              <div class="text-center">
+                <p>Hoặc đăng nhập bằng</p>
+                <button class="btn btn-danger">
+                  <i class="fab fa-google"></i> Google
+                </button>
+                <button class="btn btn-primary">
+                  <i class="fab fa-facebook-f"></i> Facebook
+                </button>
+              </div>
+            </div>
+            <div id="registerForm" style="display: none">
+              <form>
+                <div class="form-group">
+                  <label for="fullName">Họ và Tên</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="fullName"
+                    placeholder="Nhập họ tên"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="regEmail">Email</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="regEmail"
+                    placeholder="Nhập email"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="phone">Số điện thoại</label>
+                  <input
+                    type="tel"
+                    class="form-control"
+                    id="phone"
+                    placeholder="Nhập số điện thoại"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="regPassword">Mật khẩu</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="regPassword"
+                    placeholder="Nhập mật khẩu"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="confirmPassword">Xác nhận mật khẩu</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="confirmPassword"
+                    placeholder="Nhập lại mật khẩu"
+                  />
+                </div>
+                <button type="submit" class="btn btn-success btn-block">
+                  Xác nhận đăng ký
+                </button>
+              </form>
+              <hr />
+              <div class="text-center">
+                <p>Hoặc đăng ký bằng</p>
+                <button class="btn btn-danger">
+                  <i class="fab fa-google"></i> Google
+                </button>
+                <button class="btn btn-primary">
+                  <i class="fab fa-facebook-f"></i> Facebook
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../vendor/jquery-3.5.1.min.js"></script>
+    <script src="../vendor/popper.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../js/script.js"></script>
+  </body>
+</html>
