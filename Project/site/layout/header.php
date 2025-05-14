@@ -1,22 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Trang chủ - HotelHub</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/x-icon" href="../upload/logo.jpg" />
-    <link rel="stylesheet" href="public/vendor/fontawesome-free-5.11.2-web/css/all.min.css">
-    <link rel="stylesheet" href="public/vendor/bootstrap-3.3.7/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="public/css/style.css">
-    <script src="public/vendor/bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="public/js/script.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HotelHub - MeMe Hotel</title>
+    <link rel="stylesheet" href="../../site/public/vendor/fontawesome-free-5.11.2-web/css/all.min.css" />
+    <link rel="stylesheet" href="../../site/public/vendor/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../site/public/css/style.css" />
 </head>
 
 <body>
-    <header>
-        <!-- Top Navbar -->
-        <!-- End top navbar -->
-        <!-- Header -->
-        <!-- End header -->
-    </header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand ml-1" href="#"><img src="../../upload/Logo.png" alt="logo" />HotelHub</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menuCollapse">
+                <ul id="nav-links" class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link p-2" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link p-2" href="#">Rooms</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link p-2" href="#">Feedback</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link p-2" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link p-2" data-toggle="modal" data-target="#authModal" href="#"><i
+                                class="fas fa-user"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
