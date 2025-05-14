@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../vendor/fontawesome-free-5.11.2-web/css/all.min.css">
+  <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
+  <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="../css/thong-tin-khach-hang.css">
+</head>
+<body>
+  <body>
+    <!-- Header -->
+    <header>  
+    </header>
+    <!-- Main Content -->
+    <main>
+      <div class="container mt-5">
+        <!-- Toggle Button for Mobile -->
+        <button class="btn btn-primary d-md-none mb-3" id="menu">☰ Menu</button>
+        <div class="row ">
+            <!-- Sidebar (Profile Section) -->
+            <section class="col-md-4 sidebar" id="sidebar">
+                <div class="card card-custom">
+                    <div class="card-body text-center">
+                        <img src="../images/Logo.png" alt="Profile" class="profile-img mb-3">
+                        <a href="#">Thông tin cá nhân</a>
+                        <a href="#">Đổi mật khẩu</a>
+                        <a href="#">Lịch sử đặt phòng</a>
+                        <a href="#">Hóa đơn</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Main Content -->
+            <div class="col-md-8">
+                <!-- Thông tin cá nhân -->
+                <section class="mb-4">
+                    <div class="card card-custom">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Thông tin cá nhân</h5>
+                            <form>
+                                <div class="mb-3">
+                                    <label class="form-label"></label>
+                                    <input type="text" class="form-control" placeholder="Họ và tên">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label"></label>
+                                    <input type="email" class="form-control" placeholder="Địa chỉ email">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label"></label>
+                                    <input type="text" class="form-control" placeholder="Số điện thoại">
+                                </div>
+                                 <div class="mb-3 gioitinh">
+                                    <h6>Giới tính</h6>
+                                    <label class="form-label">
+                                         <input type="radio" value="Nam" name="gioitinh">Nam
+                                    </label>
+                                    <label class="form-label">
+                                         <input type="radio" value="Nữ" name="gioitinh">Nữ
+                                    </label>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Cập nhật</button>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+                 <!-- Thay đổi mật khẩu -->
+                <section class="mb-4">
+                    <div class="card card-custom">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Thay đổi mật khẩu</h5>
+                            <form>
+                                <div class="mb-3">
+                                    <label class="form-label"></label>
+                                    <input type="password" class="form-control" placeholder="Mật khẩu cũ">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label"></label>
+                                    <input type="password" class="form-control" placeholder="Mật khẩu mới">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label"></label>
+                                    <input type="password" class="form-control" placeholder="Xác nhận mật khẩu mới">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Cập nhật</button>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+                <!-- Phòng vip -->
+                <section>
+                    <div class="card card-custom">
+                        <div class="card-body viproom">
+                            <div class="room-item">
+                                <div>
+                                     <img src="../images/room1.png" alt="" >     
+                                </div>  
+                               <div class="room-item-info">
+                                    <p>V.I.P 1 Room</p>
+                                    <p>Thời điểm: 21/03/2004- 11/5/2011</p>
+                                    <a href="#">Xem hóa đơn</a>
+                                </div>                                            
+                            </div>
+                            <div class="room-item">
+                                 <div>
+                                     <img src="../images/room1.png" alt="" >     
+                                </div> 
+                                <div class="room-item-info">
+                                    <p>V.I.P 1 Room</p>
+                                    <p>Thời điểm: 21/03/2004- 11/5/2011</p>
+                                    <a href="#">Xem hóa đơn</a>
+                                </div>   
+                            </div>
+                            <div class="room-item">
+                                <div>
+                                     <img src="../images/room1.png" alt="" >     
+                                </div> 
+                               <div class="room-item-info">
+                                    <p>V.I.P 1 Room</p>
+                                    <p>Thời điểm: 21/03/2004- 11/5/2011</p>
+                                    <a href="#">Xem hóa đơn</a>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Hóa đơn -->
+                <section>
+                    <div class="card card-custom">
+                        <div class="card-body bill" >                          
+                            <div class="bill-item">
+                                 <div>
+                                 <img src="../images/bill.png" alt="">
+                                </div>
+                                <div class="bill-item_info">
+                                    <p>Mã hóa đơn:001</p>
+                                    <p>Thời điểm lập HĐ:21/03/2004</p>
+                                    <p>Thời điểm thanh toán HĐ:....</p>
+                                    <p>Tổng:1.999.999đ</p>
+                                </div>
+                                <div class="bill-item_status">
+                                    <div>
+                                        <p>đã thanh toán</p>
+                                        <img src="../images/around.png" alt="">
+                                    </div>
+                                    <a href="#">Xuất hóa đơn</a>
+                                </div>
+                            </div>
+                            <div class="bill-item">
+                                <div>
+                                <img src="../images/bill.png" alt="">
+                                </div>
+                                <div class="bill-item_info">
+                                    <p>Mã hóa đơn:001</p>
+                                    <p>Thời điểm lập HĐ:21/03/2004</p>
+                                    <p>Thời điểm thanh toán HĐ:....</p>
+                                    <p>Tổng:1.999.999đ</p>
+                                </div>
+                                <div class="bill-item_status">
+                                    <div>
+                                        <p>đã thanh toán</p>
+                                        <img src="../images/around.png" alt="">
+                                    </div>
+                                    <a href="#">Xuất hóa đơn</a>
+                                </div>
+                            </div>
+                            <div class="bill-item">
+                                 <div>
+                                    <img src="../images/bill.png" alt="">
+                                </div>
+                                <div class="bill-item_info">
+                                    <p>Mã hóa đơn:001</p>
+                                    <p>Thời điểm lập HĐ:21/03/2004</p>
+                                    <p>Thời điểm thanh toán HĐ:....</p>
+                                    <p>Tổng:1.999.999đ</p>
+                                </div>
+                                <div class="bill-item_status">
+                                    <div>
+                                        <p>đã thanh toán</p>
+                                        <img src="../images/around.png" alt="">
+                                    </div>
+                                    <a href="#">Xuất hóa đơn</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>  
+    </main>
+
+    <!-- Footer -->
+    <footer>
+    </footer>
+    <script>
+        document.getElementById("menu").onclick = function()
+        {
+        let hienthimenu = document.getElementById('sidebar');
+            if (hienthimenu.style.display === 'block') {
+                 hienthimenu.style.display = 'none';
+            } else {
+                 hienthimenu.style.display = 'block';
+          }
+        }
+    </script>
+</body>
+</html>

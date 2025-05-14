@@ -1,0 +1,139 @@
+*,p
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+@font-face{
+	font-family: Infer-Regular;
+	src:url(..fonts/static/Inter_28pt-Regular.ttf);
+}
+@font-face{
+	font-family: Infer-Bold;
+	src:url(..fonts/static/Inter_18pt-Bold.ttf);
+}
+body
+{
+    font-family: Infer-Regular,Infer-Bold;
+    font-size: 22px;
+}
+.search-container {
+         background: #fff;
+         padding: 20px;
+         border-radius: 10px;
+         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+         margin: 20px auto;
+         width: 100%;
+         border: 1px solid #ddd; 
+         background-color: #ffffff; 
+ }
+ .search-container h5 {
+         font-size: 18px;
+         margin-bottom: 20px;
+         background-color: #f0eeeb; 
+         padding: 10px;
+         border-radius: 15px 15px 0 0;
+         color: #000;
+         font-family: Infer-Bold;
+ }
+ .search-container .form-group label {
+         font-size: 18px;
+         margin-bottom: 5px;
+         display: block;
+ }
+ .search-container .form-control {
+         font-size: 14px;
+         padding: 8px;
+         border: 1px solid #ccc;
+         border-radius: 5px;
+         width: 100%;
+         box-sizing: border-box;
+ }
+ .search-container .row > div {
+         margin-bottom: 15px;
+ }
+ .search-container .search-btn {
+         width: 100%;
+         max-width: 100px;
+         background-color: #d32f2f;
+         color: white;
+         border: none;
+         padding: 10px;
+         font-size: 16px;
+         border-radius: 5px;
+         cursor: pointer;
+         display: block;
+         margin: auto;
+ }
+ .search-container .search-btn:hover {
+         background-color: #b71c1c;
+ }
+.room-section h5
+{
+    text-align: center;
+    font-family: Infer-Bold;
+    font-weight: bold;
+}
+.room-card {
+    max-width: 450px;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: auto;
+    margin-bottom: 15px;
+    text-align: center;
+    background-color: #ddd;
+}
+.room-card img {
+    object-fit: cover;
+    border-radius: 15px;
+    width: 100%;
+    height: 250px;
+}
+.room-card .card-body {
+    margin-top: 10px;
+}
+.room-card h6
+{
+    background-color: rgb(80, 169, 225);
+    line-height: 30px;;
+}
+.room-card .rating {
+    color: #ffd700;
+}
+.room-card .coupon
+{
+    text-decoration: line-through;
+}
+.room-card .price {
+    color: #d59c3a;
+}
+.room-card .btn {
+    border-radius: 40px;
+    width: 130px;
+    font-size: 18px;
+    padding: 5px 10px;
+}
+/* Responsive cho tablet và desktop */
+@media (min-width: 768px) {
+     body
+    {
+        width: 90%;
+        margin: auto;
+    }
+    .room-section h5
+    {
+    text-align: left;
+    }
+}   
+@media (min-width: 992px) {
+    body
+    {
+        width: 90%;
+        margin: auto;
+    }
+        .room-section h5
+    {
+    text-align: left;
+    }
+}
