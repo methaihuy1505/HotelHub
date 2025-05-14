@@ -1,0 +1,500 @@
+@font-face {
+    font-family: Inter-Italic;
+    src: url(../fonts/Inter/Inter-Italic-VariableFont_opsz\,wght.ttf);
+}
+@font-face {
+    font-family: Inter;
+    src: url(../fonts/Inter/Inter-VariableFont_opsz\,wght.ttf);
+}
+body{
+    font-family: Inter;
+    background-color: #F4EDED;
+    margin-right: auto;
+    margin-left:auto ;
+}
+
+
+
+.filter-group {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.filter-group h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.star {
+    color: gold;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.card-title .star {
+    font-size: 1em;
+    margin-left: 5px;
+}
+
+.card-body ul {
+    padding-left: 20px;
+}
+
+.card-body ul li {
+    margin-bottom: 5px;
+}
+
+/* Add more specific styling to match the image's colors and layout */
+.col-md-3.mb-2.mb-md-0{
+    padding-top: 5px;
+}
+.form-check{
+    margin-top: 10px;
+}
+.container.mt-4{
+    padding: 0px;
+    margin-top: 30px;
+}
+.container.py-3{
+    margin-left: auto;
+    margin-right: auto;
+    background-color:#FFFFFF;
+}
+
+.btn.btn-outline-secondary{
+    height: 50px;
+}
+.check-in,.check-out{
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center
+}
+.check-in label,.check-out label{
+    width: 120px;
+    text-align: center;
+    margin-top: 10px;
+    margin-right: 5px;
+}
+.form-control.form-control-sm{
+    height: 50px;
+}
+.row > .col-md-3.text-right { 
+    width: 150px;
+    flex: 0 0 auto !important; 
+}
+.container .filter-group:nth-child(3) .form-check>label:nth-child(2){
+    font-size:20px;
+    color: #318B27;
+}
+.container .filter-group:nth-child(3) .form-check>input{
+    margin-top: 9px;
+
+}
+.col-md-3{
+    max-width: 100%;
+}
+.card{
+    margin-bottom: 20px;
+    border-radius: 50px;
+    background-color: #D9D9D9;
+}
+.col-md-8{
+    display: flex;
+}
+
+
+.d-flex{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    padding-left: 10px;
+    border-left: 1px solid black;
+}
+.card-text{
+    margin-top: 90px;
+    padding-left: -10px;
+    margin-right: 10px;
+    font-size: 21px;
+    color: gold;
+
+}
+
+.card-text>strong{
+    text-shadow:
+    -1px -1px 0 #000,
+     0   -1px 0 #000,
+     1px -1px 0 #000,
+     1px  0   0 #000,
+     1px  1px 0 #000,
+     0    1px 0 #000,
+    -1px  1px 0 #000,
+    -1px  0   0 #000;
+}
+.card-text1{
+    position: absolute;
+    margin-top: 70px;
+    margin-left: 75px;
+    padding: 0px;
+    font-size: 13px;
+    text-decoration:1.5px line-through black;
+}
+.btn.btn-warning.btn-sm{
+    background-color: #2C2C2C;
+    color: #FFFFFF;
+    border: 0px;
+    border-radius: 5px;
+    margin-left: -20px;
+    transition: 0.3s;
+
+}
+.btn.btn-warning.btn-sm:hover{
+    background-color: goldenrod;
+    transition: 0.3s;
+}
+.col-md-4{
+    margin-top: -18px;
+    height: 210px;
+}
+.card-img{
+    height: 110%;
+    width: 100%;
+}
+.card-title .star {
+    font-size: 1.7em;
+    margin-left: 5px;
+}
+.service-container{
+    display: flex;
+    flex-direction: column;
+}
+.service-card {
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: #f8f9fa;
+}
+.service-title {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+.service-details {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+.form-group{
+    margin-top: 20px;
+    background-color: #f8f8f8; 
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-size: 20px;
+}
+.service-container{
+    position: absolute;
+    top: 10%;
+    left: 25%;
+    width: 50%;
+    border-radius: 10px;
+    background-color: #f8f8f8; 
+    border: 1px solid black;
+    padding: 30px;
+}
+.custom-control-label.service-title{  
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 1;
+}
+.form-group label{
+    margin-bottom: 0px;
+}
+
+.service-group{
+    padding: 15px;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.service-card{
+    border-radius: 25px;
+    font-family: Inter-Italic;
+    font-weight: bold;
+}
+.serv-button{
+    justify-self: end;
+}
+.service-card.first{
+    background-image: url(../image/service_bg1.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.service-card.second{
+    background-image: url(../image/service_bg2.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+@media (min-width: 344px) {
+    body{
+        margin-left: auto;
+    }
+    .container.mt-4{
+        padding: 0px;
+        margin-top: 30px;
+    }
+    .check-in,.check-out{
+        margin-left: 17.5px;
+        display: flex;
+        align-items: center
+    }
+    .col-md-4{
+    margin-top: 0px;
+    height: 231px;
+    }
+    .col-md-3{
+        padding: 0px;
+        width: 100%;
+    }
+    .card-img{
+    height: 231px;
+    width: 100%;
+    }
+    .row > .col-md-3.text-right{
+        width: 50px;
+        margin-top: 10px;
+        margin-left: auto;        
+        padding: 0px;
+
+    }
+    .btn.btn-link{
+        padding: 0px;
+
+    }
+    .d-flex{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding: 20px ;
+        padding-right: 0px;
+        padding-left: 10px;
+        border-left: 1px solid black;
+        width: 160px;
+    }
+    .card-text{
+        margin-top: 90px;
+        margin-bottom: 0px;
+        padding-left: -10px;
+        margin-right: 10px;
+        font-size: 17px;
+        color: gold;
+    
+    }
+    .card-text1{
+        position: absolute;
+        margin-top: 70px;
+        margin-left: 45px;
+        padding: 0px;
+        font-size: 10px;
+        text-decoration:1.5px line-through black;
+    }
+    .btn.btn-warning.btn-sm{
+        background-color: #2C2C2C;
+        color: #FFFFFF;
+        border: 0px;
+        border-radius: 5px;
+        margin-left: -20px;
+        margin-bottom: 20px;
+    }
+    .service-container{
+        left: 2.5%;
+        width: 95%;
+    }
+}
+
+@media (min-width: 576px) {
+    .check-in,.check-out{
+    margin-left: 17.5px;
+    display: flex;
+    align-items: center
+    }
+    .col-md-4{
+    margin-top: 0px;
+    height: 231px;
+    }
+    .card-img{
+    height: 231px;
+    width: 100%;
+    }
+    .row > .col-md-3.text-right{
+        width: 50px;
+        margin-top: 0PX;
+        margin-right: 10px;
+    }
+
+    .d-flex{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding: 20px ;
+        padding-right: 0px;
+        padding-left: 10px;
+        border-left: 1px solid black;
+    }
+    .card-text{
+        margin-top: 90px;
+        padding-left: -10px;
+        margin-right: 10px;
+        font-size: 20px;
+        color: gold;
+    
+    }
+    .card-text1{
+        position: absolute;
+        margin-top: 70px;
+        margin-left: 65px;
+        padding: 0px;
+        font-size: 13px;
+        text-decoration:1.5px line-through black;
+    }
+    .btn.btn-warning.btn-sm{
+        background-color: #2C2C2C;
+        color: #FFFFFF;
+        border: 0px;
+        border-radius: 5px;
+        margin-left: -20px;
+    }
+     .service-container{
+        left: 2.5%;
+        width: 95%;
+    }
+}
+@media (min-width: 768px) {
+    .check-in{
+        margin-right: 17.5px;
+        margin-left: 17.5px;
+        display: flex;
+        align-items: center
+    }
+    .check-out{
+        margin-right: 17.5px;
+        margin-left: 190px;
+        display: flex;
+        align-items: center
+    }
+    .card-body{
+        padding: 20px 10px;
+
+    }
+    .d-flex{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding: 20px 10px;
+        width: 120px;
+        border-left: 1px solid black;
+    }
+    .card-text{
+        margin-top: 90px;
+        padding-left: -10px;
+        font-size: 14px;
+        color: gold;
+    
+    }
+    .card-text1{
+        position: absolute;
+        margin-top: 70px;
+        margin-left: 55px;
+        padding: 0px;
+        font-size: 10px;
+        text-decoration:1.5px line-through black;
+    }
+    .btn.btn-warning.btn-sm{
+        background-color: #2C2C2C;
+        color: #FFFFFF;
+        border: 0px;
+        border-radius: 5px;
+        margin-left: 0px;
+    }
+    .col-md-4{
+    margin-top: -25px;
+    height: 215px;
+    }
+    .card-img{
+    height: 110%;
+    width: 100%;
+    }
+    .form-check-label{
+        font-size: 90%;
+    }
+    .card-body{
+        padding: 10px 20px;
+        padding-bottom: 0px;
+        padding-right: 0px;
+        width: 200px;
+    }
+    
+    .service-container{
+        left: 2.5%;
+        width: 95%;
+    }
+}
+@media (min-width: 992px) {
+     .check-in,.check-out{
+        margin-right: auto;
+        margin-left: auto;
+        display: flex;
+        align-items: center
+    }
+    .row > .col-md-3.text-right{
+        margin-top: 0px;
+    }
+
+
+    .d-flex{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        padding-left: 10px;
+        border-left: 1px solid black;
+        width: 200px;
+    }
+    .card-text{
+        margin-top: 90px;
+        padding-left: -10px;
+        font-size: 21px;
+        color: gold;
+    
+    }
+    .card-text1{
+        position: absolute;
+        margin-top: 70px;
+        margin-left: 75px;
+        padding: 0px;
+        font-size: 13px;
+        text-decoration:1.5px line-through black;
+    }
+    .btn.btn-warning.btn-sm{
+        background-color: #2C2C2C;
+        color: #FFFFFF;
+        border: 0px;
+        margin-top: 20px;
+        border-radius: 5px;
+        margin-left: -20px;
+    } 
+    .service-container{
+        left: 2.5%;
+        width: 95%;
+    }
+}
