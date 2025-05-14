@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../../site/public/vendor/fontawesome-free-5.11.2-web/css/all.min.css" />
     <link rel="stylesheet" href="../../site/public/vendor/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../../site/public/css/style.css" />
+    <link rel="shortcut icon" href="../../upload/Logo.ico" type="image/x-icon">
 </head>
 
 <body>
