@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hoa Don Thanh Toan</title>
+    <linkrel="stylesheet" href="vendor/fontawesome-free-5.11.2-web/css/all.min.css"/>
+    <linkrel="stylesheet" href="vendor/bootstrap-3.3.7/dist/css/bootstrap.min.css"/>
+    <script src="vendor/bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
+  </head>
+    <style>
+body {
+  font-family: Inter-Regular, sans-serif;
+  font-size: 16px;
+  color: #000;
+}
+@font-face {
+  font-family: Inter-Regular;
+  src: url(../fonts/Inter/static/Inter_18pt-Regular.ttf);
+}
+
+.invoice-box {
+  max-width: 640px;
+  margin: 30px auto;
+  padding: 30px;
+  background: #fff;
+  border: 1px solid #dee2e6;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+.invoice-box .logo{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.col-6{
+    width: 50%;
+}
+.text-end>strong{
+    position: absolute;
+    left:55%;
+}
+.dong{
+    text-align: center; 
+}
+.row{
+    display: flex;
+}
+.invoice-box h4{
+    font-size: 25px;
+}
+--PhanDau
+.invoice-box h4,
+.invoice-box h5 {
+  margin: 0;
+  padding: 0;
+}
+.fw-bold{
+    text-align: center;
+}
+.invoice-box img {
+  max-height: 50px;
+  margin-right: 10px;
+}
+
+.table {
+  margin-bottom: 1rem;
+  border-collapse: separate;
+  border-spacing: 5px;
+}
+.mb-4 td{
+  border-bottom: 1px solid black;
+  border-collapse: collapse ;
+}
+.mb-4{
+  border-collapse: collapse;
+}
+
+.table th {
+  background-color: #fff;
+
+}
+.mb-4 td{
+    width: 60%;
+}
+.table td,
+.table:not(.mb-4) th {
+  padding: 8px;
+}
+
+.table-bordered
+{
+  width: 100%;
+  border-collapse: collapse;
+}
+.table-bordered th,
+.table-bordered td{
+  border: 1px solid black;
+}
+
+.table-borderless {
+  width: 100%;
+  text-align: left;
+}
+.mb-3{
+  border: 1px solid black;
+  text-align: right;
+  border-collapse: collapse;
+}
+ .mb-3 td{
+  border: 1px solid black;
+ }
+  .mb-3 tr>td{
+    width: 77%;
+  }
+
+  </style>  
+  <body>
+    <div class="invoice-box">
+  <div class="row">
+  <div class="col-6">
+    <div class="logo">
+      <img src="../images/5469595.png" alt="Logo">
+      <h4>HotelHub</h4>
+    </div>
+  </div>
+  <div class="col-6 text-end">
+    <div class="dong">
+    <strong>MeMeHotel</strong><br>
+    Cao Lỗ, quận 8, TP HCM<br>
+    Phone: +84 98 348 06 83<br>
+    nhom1@gmail.com<br>
+    www.demowebsite.com
+  </div>
+  </div>
+</div>
+
+  <h2 class="text-center fw-bold">CHI TIẾT HÓA ĐƠN</h2>
+
+  <table class="table table-borderless mb-4">
+    <tbody>
+        <td>Mã hóa đơn: 001</td>
+        <td>Ngày lập HĐ: 21/03/2004</td>
+      <tr>
+        <td>Khách hàng: </td>
+        <td><b>DuckLECopy</b></td>
+      </tr>
+      <tr>
+        <td>Ngày nhận phòng: </td>
+        <td><b>25/03/2004</b></td>
+      </tr>
+      <tr>
+        <td>Ngày trả phòng: </td>
+        <td><b>27/03/2004</b></td>
+      </tr>
+      <tr>
+
+        <td>Ngày thanh toán: </td>
+        <td><b>24/03/2004</b></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="table table-bordered">
+    <thead class="table-light">
+      <tr>
+        <th>#</th>
+        <th>Nội dung</th>
+        <th>Số lượng</th>
+        <th>Đơn giá</th>
+        <th>Thành tiền</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Phòng VIP</td>
+        <td>2 phòng/2 đêm</td>
+        <td>1.000.000 VND</td>
+        <td>4.000.000 VND</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Phòng tiêu chuẩn</td>
+        <td>1 phòng/2 đêm</td>
+        <td>600.000 VND</td>
+        <td>1.200.000 VND</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Buffet</td>
+        <td>1 phần</td>
+        <td>200.000 VND</td>
+        <td>200.000 VND</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="table table-borderless mb-3">
+    <tbody>
+      <tr>
+        <td class="text-end"><b>Tổng cộng:</b></td>
+        <td class="text-end">5.400.000 VND</td>
+      </tr>
+      <tr>
+        <td class="text-end"><b>Thuế:</b></td>
+        <td class="text-end">108.000 VND</td>
+      </tr>
+      <tr>
+        <td class="text-end"><b>Giảm giá: 10%</b></td>
+        <td class="text-end">540.000 VND</td>
+      </tr>
+      <tr>
+        <td class="text-end "><b>Tổng tiền thanh toán:</b></td>
+        <td class="text-end ">4.752.000 VND</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+  </body>
+</html>
