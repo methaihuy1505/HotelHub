@@ -178,7 +178,7 @@
                                     <div class="d-flex justify-content-between align-items-center">
                                         <p class="card-text1"><strong class="price"> 938.129 VND </strong></p>
                                         <p class="card-text"><strong class="price">938.129 VND</strong></p>
-                                        <button class="btn btn-warning btn-sm">Chọn Phòng</button>
+                                        <button class="btn btn-warning btn-sm" id="showButton">Chọn Phòng</button>
                                     </div>
                                 </div>
                             </div>
@@ -204,7 +204,7 @@
                                     <div class="d-flex justify-content-between align-items-center">
                                         <p class="card-text1"><strong class="price"> 938.129 VND </strong></p>
                                         <p class="card-text"><strong class="price">938.129 VND</strong></p>
-                                        <button class="btn btn-warning btn-sm">Chọn Phòng</button>
+                                        <button class="btn btn-warning btn-sm" id="showButton">Chọn Phòng</button>
                                     </div>
                                 </div>
                             </div>
@@ -230,7 +230,7 @@
                                     <div class="d-flex justify-content-between align-items-center">
                                         <p class="card-text1"><strong class="price"> 938.129 VND </strong></p>
                                         <p class="card-text"><strong class="price">938.129 VND</strong></p>
-                                        <button class="btn btn-warning btn-sm">Chọn Phòng</button>
+                                        <button class="btn btn-warning btn-sm" id="showButton">Chọn Phòng</button>
                                     </div>
                                 </div>
                             </div>
@@ -256,7 +256,7 @@
                                     <div class="d-flex justify-content-between align-items-center">
                                         <p class="card-text1"><strong class="price"> 938.129 VND </strong></p>
                                         <p class="card-text"><strong class="price">938.129 VND</strong></p>
-                                        <button class="btn btn-warning btn-sm">Chọn Phòng</button>
+                                        <button class="btn btn-warning btn-sm" id="showButton">Chọn Phòng</button>
                                     </div>
                                 </div>
                             </div>
@@ -266,11 +266,64 @@
             </main>
         </div>
     </div>
+    <div class="collapse service-container" id="service-container" style="display: none;">
+        <div class="form-group">
+            <label for="otherServices">Dịch vụ khác:</label>
+        </div>
+        <div class="service-group">
+            <div class="service-card first" >
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="swim" >
+                    <label class="custom-control-label service-title" for="swim">Bơi</label>
+                </div>
+                <p>HotelHub cung cấp hồ bơi ngoài trời hiện đại, sạch sẽ, phù hợp cho khách thư giãn hoặc rèn luyện thể lực.</p>
+                <ul>
+                    <li class="service-details">Giờ phục vụ: 06:00 – 21:00 hàng ngày</li>
+                    <li class="service-details">Tiện ích đi kèm: ghế nghỉ, khăn tắm miễn phí, khu vực trẻ em riêng biệt.</li>
+                </ul>
+            </div>
 
+            <div class="service-card second">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="buffet" >
+                    <label class="custom-control-label service-title" for="buffet">Buffet</label>
+                </div>
+                <p>HotelHub phục vụ buffet đa dạng với các món Á - Âu phong phú, nguyên liệu tươi ngon, phù hợp cho bữa sáng, trưa và tối.</p>
+                <p>Giờ phục vụ:</p>
+                <ul>
+                    <li class="service-details">Buffet sáng: 06:30 – 09:30</li>
+                    <li class="service-details">Buffet trưa: 11:30 – 14:00</li>
+                    <li class="service-details">Buffet tối: 18:00 – 20:00</li>
+                </ul>
+            </div>
+
+            <div class="serv-button">
+                <button class="btn btn-secondary btn-lg rounded-circle">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+
+        </div>
+    </div>
     <footer class="bg-light py-4 mt-5">
        
     </footer>
 
     <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+     <script>
+        const myDiv = document.getElementById('service-container');
+        const showDivButton = document.getElementById('showButton');
+
+        showDivButton.addEventListener('click', () => {
+            myDiv.style.display = 'block';
+        });
+
+        document.addEventListener('click', (event) => {
+        if (!myDiv.contains(event.target) && event.target !== showDivButton) {
+            myDiv.style.display = 'none';
+        }
+        });
+
+    </script>
 </body>
 </html>
