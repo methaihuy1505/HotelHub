@@ -59,4 +59,10 @@ class Invoice
     {$this->invoiceDate = $invoiceDate;return $this;}
     public function setPaymentDate($paymentDate)
     {$this->paymentDate = $paymentDate;return $this;}
+
+    public function getInvoiceDetail()
+    {
+        $repo = new InvoiceDetailRepository();
+        return $repo->find($this->invoiceDetailID);
+    }
 }

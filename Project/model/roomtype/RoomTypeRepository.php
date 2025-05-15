@@ -1,9 +1,12 @@
 <?php
-class RoomTypeRepository extends BaseRepository {
 
-    protected function fetchAll($condition = null, $sort = null, $limit = null) {
+class RoomTypeRepository extends BaseRepository
+{
+
+    protected function fetchAll($condition = null, $sort = null, $limit = null)
+    {
         global $conn;
-        $roomTypes = array();
+        $roomTypes = [];
 
         $sql = "SELECT * FROM roomtype";
         if ($condition) {
@@ -25,7 +28,8 @@ class RoomTypeRepository extends BaseRepository {
                 $roomType = new RoomType(
                     $row["roomTypeId"],
                     $row["typeName"],
-                    $row["describe"]
+                    $row["roomDescribe"],
+                    $row["priceRange"]// Lấy dữ liệu priceRange
                 );
                 $roomTypes[] = $roomType;
             }
@@ -34,21 +38,23 @@ class RoomTypeRepository extends BaseRepository {
         return $roomTypes;
     }
 
-    public function getAll() {
+    public function getAll()
+    {
         return $this->getBy();
     }
 
-    public function getBy($array_conds = array(), $array_sorts = array(), $page = null, $qty_per_page = null) {
+    public function getBy($array_conds = [], $array_sorts = [], $page = null, $qty_per_page = null)
+    {
         if ($page) {
             $page_index = $page - 1;
         }
 
-        $temp = array();
-        foreach($array_conds as $column => $cond) {
+        $temp = [];
+        foreach ($array_conds as $column => $cond) {
             $type = $cond['type'];
-            $val = $cond['val'];
-            $str = "$column $type ";
-            if (in_array($type, array("BETWEEN", "LIKE"))) {
+            $val  = $cond['val'];
+            $str  = "$column $type ";
+            if (in_array($type, ["BETWEEN", "LIKE"])) {
                 $str .= "$val";
             } else {
                 $str .= "'$val'";
@@ -58,11 +64,11 @@ class RoomTypeRepository extends BaseRepository {
 
         $condition = count($temp) ? implode(" AND ", $temp) : null;
 
-        $temp = array();
-        foreach($array_sorts as $key => $sort) {
+        $temp = [];
+        foreach ($array_sorts as $key => $sort) {
             $temp[] = "$key $sort";
         }
-        $sort = count($temp) ? "ORDER BY ". implode(" , ", $temp) : null;
+        $sort = count($temp) ? "ORDER BY " . implode(" , ", $temp) : null;
 
         $limit = null;
         if ($qty_per_page) {
@@ -73,20 +79,23 @@ class RoomTypeRepository extends BaseRepository {
         return $this->fetchAll($condition, $sort, $limit);
     }
 
-    public function find($id) {
+    public function find($id)
+    {
         $condition = "roomTypeId = $id";
         $roomTypes = $this->fetchAll($condition);
         return current($roomTypes);
     }
 
-    public function save($data) {
+    public function save($data)
+    {
         global $conn;
-        $typeName = $data["typeName"];
-        $describe = $data["describe"];
+        $typeName   = $data["typeName"];
+        $describe   = $data["roomDescribe"];
+        $priceRange = $data["priceRange"]; // Lấy giá trị priceRange từ dữ liệu đầu vào
 
-        $sql = "INSERT INTO roomtype (typeName, describe) VALUES ('$typeName', '$describe')";
+        $sql = "INSERT INTO roomtype (typeName, roomDescribe, priceRange) VALUES ('$typeName', '$describe', '$priceRange')";
 
-        if ($conn->query($sql) === TRUE) {
+        if ($conn->query($sql) === true) {
             return $conn->insert_id;
         }
 
@@ -94,18 +103,21 @@ class RoomTypeRepository extends BaseRepository {
         return false;
     }
 
-    public function update(RoomType $roomType) {
+    public function update(RoomType $roomType)
+    {
         global $conn;
-        $id = $roomType->getRoomTypeId();
-        $typeName = $roomType->getTypeName();
-        $describe = $roomType->getDescribe();
+        $id         = $roomType->getRoomTypeId();
+        $typeName   = $roomType->getTypeName();
+        $describe   = $roomType->getDescribe();
+        $priceRange = $roomType->getPriceRange(); // Thêm priceRange vào truy vấn
 
-        $sql = "UPDATE roomtype SET 
+        $sql = "UPDATE roomtype SET
                 typeName='$typeName',
-                describe='$describe'
+                roomDescribe='$describe',
+                priceRange='$priceRange'
                 WHERE roomTypeId=$id";
 
-        if ($conn->query($sql) === TRUE) {
+        if ($conn->query($sql) === true) {
             return true;
         }
 
@@ -113,12 +125,13 @@ class RoomTypeRepository extends BaseRepository {
         return false;
     }
 
-    public function delete(RoomType $roomType) {
+    public function delete(RoomType $roomType)
+    {
         global $conn;
-        $id = $roomType->getRoomTypeId();
+        $id  = $roomType->getRoomTypeId();
         $sql = "DELETE FROM roomtype WHERE roomTypeId=$id";
 
-        if ($conn->query($sql) === TRUE) {
+        if ($conn->query($sql) === true) {
             return true;
         }
 
@@ -126,4 +139,3 @@ class RoomTypeRepository extends BaseRepository {
         return false;
     }
 }
-?>

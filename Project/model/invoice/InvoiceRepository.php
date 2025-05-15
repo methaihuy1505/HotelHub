@@ -34,6 +34,42 @@ class InvoiceRepository extends BaseRepository
         return $this->fetchAll();
     }
 
+    public function getByUserAccountId($userAccountId)
+    {
+        global $conn;
+
+        $invoices = [];
+
+        $sql = "
+        SELECT i.*
+        FROM invoice i
+        JOIN invoicedetail id ON i.invoiceDetailID = id.invoiceDetailID
+        JOIN bookingroom b ON id.bookingRoomID = b.bookingRoomID
+        WHERE b.userAccountID = '$userAccountId'
+    ";
+
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $invoice = new Invoice(
+                    $row['invoiceID'],
+                    $row['invoiceDetailID'],
+                    $row['discount'],
+                    $row['tax'],
+                    $row['finalAmount'],
+                    $row['status'],
+                    $row['paymentType'],
+                    $row['invoiceDate'],
+                    $row['paymentDate']
+                );
+                $invoices[] = $invoice;
+            }
+        }
+
+        return $invoices;
+    }
+
     public function find($invoiceID)
     {
         $condition = "invoiceID = '$invoiceID'";

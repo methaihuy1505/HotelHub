@@ -10,15 +10,13 @@ class UserAccountRepository extends BaseRepository
             $sql .= " WHERE $condition";
         }
         $result = $conn->query($sql);
-        if ($result->num_rows > 0) {
+        if ($result && $result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 $userAccount = new UserAccount(
                     $row['idAccount'],
                     $row['fullName'],
                     $row['phoneNumber'],
                     $row['gender'],
-                    $row['bookingRoomID'],
-                    $row['invoiceID'],
                     $row['userImage']
                 );
                 $userAccounts[] = $userAccount;
@@ -36,24 +34,19 @@ class UserAccountRepository extends BaseRepository
     {
         $condition    = "idAccount = '$idAccount'";
         $userAccounts = $this->fetchAll($condition);
-        return current($userAccounts);
+        return current($userAccounts) ?: null;
     }
 
     public function save($data)
     {
         global $conn;
-        $fullName      = $data['fullName'];
-        $phoneNumber   = $data['phoneNumber'];
-        $gender        = $data['gender'];
-        $bookingRoomID = $data['bookingRoomID'] ?? 'NULL';
-        $invoiceID     = $data['invoiceID'] ?? 'NULL';
-        $userImage     = $data['userImage'];
+        $fullName    = $conn->real_escape_string($data['fullName']);
+        $phoneNumber = $conn->real_escape_string($data['phoneNumber']);
+        $gender      = $conn->real_escape_string($data['gender']);
+        $userImage   = $conn->real_escape_string($data['userImage']);
 
-        $bookingRoomID = $bookingRoomID === null ? "NULL" : "'$bookingRoomID'";
-        $invoiceID     = $invoiceID === null ? "NULL" : "'$invoiceID'";
-
-        $sql = "INSERT INTO useraccount (fullName, phoneNumber, gender, bookingRoomID, invoiceID, userImage)
-                VALUES ('$fullName', '$phoneNumber', '$gender', $bookingRoomID, $invoiceID, '$userImage')";
+        $sql = "INSERT INTO useraccount (fullName, phoneNumber, gender, userImage)
+                VALUES ('$fullName', '$phoneNumber', '$gender', '$userImage')";
 
         if ($conn->query($sql) === true) {
             return $conn->insert_id;
@@ -65,19 +58,18 @@ class UserAccountRepository extends BaseRepository
     public function update($userAccount)
     {
         global $conn;
-        $idAccount     = $userAccount->getIdAccount();
-        $fullName      = $userAccount->getFullName();
-        $phoneNumber   = $userAccount->getPhoneNumber();
-        $gender        = $userAccount->getGender();
-        $bookingRoomID = $userAccount->getBookingRoomID();
-        $invoiceID     = $userAccount->getInvoiceID();
-        $userImage     = $userAccount->getUserImage();
+        $idAccount   = $conn->real_escape_string($userAccount->getIdAccount());
+        $fullName    = $conn->real_escape_string($userAccount->getFullName());
+        $phoneNumber = $conn->real_escape_string($userAccount->getPhoneNumber());
+        $gender      = $conn->real_escape_string($userAccount->getGender());
+        $userImage   = $conn->real_escape_string($userAccount->getUserImage());
 
-        $bookingRoomID = empty($bookingRoomID) ? "NULL" : "'$bookingRoomID'";
-        $invoiceID     = empty($invoiceID) ? "NULL" : "'$invoiceID'";
-
-        $sql = "UPDATE useraccount SET fullName='$fullName', phoneNumber='$phoneNumber', gender='$gender',
-                bookingRoomID=$bookingRoomID, invoiceID=$invoiceID, userImage='$userImage' WHERE idAccount='$idAccount'";
+        $sql = "UPDATE useraccount SET
+                    fullName = '$fullName',
+                    phoneNumber = '$phoneNumber',
+                    gender = '$gender',
+                    userImage = '$userImage'
+                WHERE idAccount = '$idAccount'";
 
         if ($conn->query($sql) === true) {
             return true;
@@ -89,7 +81,7 @@ class UserAccountRepository extends BaseRepository
     public function delete($userAccount)
     {
         global $conn;
-        $idAccount = $userAccount->getIdAccount();
+        $idAccount = $conn->real_escape_string($userAccount->getIdAccount());
         $sql       = "DELETE FROM useraccount WHERE idAccount='$idAccount'";
 
         if ($conn->query($sql) === true) {

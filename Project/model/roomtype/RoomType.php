@@ -1,54 +1,73 @@
-<?php 
-class RoomType {
+<?php
+class RoomType
+{
     protected $roomTypeId;
     protected $typeName;
     protected $describe;
+    protected $priceRange;
 
-     function __construct($roomTypeId, $typeName, $describe) {
+    public function __construct($roomTypeId, $typeName, $describe, $priceRange)
+    {
         $this->roomTypeId = $roomTypeId;
-        $this->typeName = $typeName;
-        $this->describe = $describe;
+        $this->typeName   = $typeName;
+        $this->describe   = $describe;
+        $this->priceRange = $priceRange;
     }
 
-     function getRoomTypeId() {
+    public function getRoomTypeId()
+    {
         return $this->roomTypeId;
     }
 
-     function setRoomTypeId($roomTypeId) {
+    public function setRoomTypeId($roomTypeId)
+    {
         $this->roomTypeId = $roomTypeId;
         return $this;
     }
 
-     function getTypeName() {
+    public function getTypeName()
+    {
         return $this->typeName;
     }
 
-     function setTypeName($typeName) {
+    public function setTypeName($typeName)
+    {
         $this->typeName = $typeName;
         return $this;
     }
 
-     function getDescribe() {
+    public function getDescribe()
+    {
         return $this->describe;
     }
 
-     function setDescribe($describe) {
+    public function setDescribe($describe)
+    {
         $this->describe = $describe;
         return $this;
     }
-    
-     function getRooms() {
+
+    public function getPriceRange()
+    {
+        return $this->priceRange;
+    }
+
+    public function setPriceRange($priceRange)
+    {
+        $this->priceRange = $priceRange;
+        return $this;
+    }
+
+    public function getRooms()
+    {
         $roomRepository = new RoomRepository();
-        $conds = [
+        $conds          = [
             "roomType" => [
-                "type" => "=", 
-                "val" => $this->typeId
-            ]
+                "type" => "=",
+                "val"  => $this->typeId,
+            ],
         ];
         $rooms = $roomRepository->getBy($conds);
         return $rooms;
     }
 }
-
- 
-?>

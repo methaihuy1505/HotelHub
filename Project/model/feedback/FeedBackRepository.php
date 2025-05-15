@@ -1,10 +1,12 @@
 <?php
 
-class FeedbackRepository extends BaseRepository {
+class FeedbackRepository extends BaseRepository
+{
 
-    protected function fetchAll($condition = null, $sort = null, $limit = null) {
+    protected function fetchAll($condition = null, $sort = null, $limit = null)
+    {
         global $conn;
-        $feedbacks = array();
+        $feedbacks = [];
 
         $sql = "SELECT * FROM feedback";
         if ($condition) {
@@ -35,33 +37,42 @@ class FeedbackRepository extends BaseRepository {
         return $feedbacks;
     }
 
-    function getAll() {
+    public function getAll()
+    {
         return $this->fetchAll();
     }
 
-    function getByRoomId($roomId) {
+    public function getByRoomId($roomId)
+    {
         $condition = "roomID = $roomId";
         return $this->fetchAll($condition);
     }
+    public function getByUserAccountId($userAccountID)
+    {
+        $condition = "userAccount = $userAccountID";
+        return $this->fetchAll($condition);
+    }
 
-    function find($id) {
+    public function find($id)
+    {
         $condition = "id = $id";
         $feedbacks = $this->fetchAll($condition);
         return current($feedbacks);
     }
 
-    function save($data) {
+    public function save($data)
+    {
         global $conn;
 
-        $roomID = $data["roomID"];
+        $roomID      = $data["roomID"];
         $userAccount = $data["userAccount"];
-        $rate = $data["rate"];
-        $comment = $data["comment"];
+        $rate        = $data["rate"];
+        $comment     = $data["comment"];
 
         $sql = "INSERT INTO feedback (roomID, userAccount, rate, comment)
                 VALUES ($roomID, '$userAccount', $rate, '$comment')";
 
-        if ($conn->query($sql) === TRUE) {
+        if ($conn->query($sql) === true) {
             return $conn->insert_id;
         }
 
@@ -69,14 +80,15 @@ class FeedbackRepository extends BaseRepository {
         return false;
     }
 
-    function update(Feedback $feedback) {
+    public function update(Feedback $feedback)
+    {
         global $conn;
 
-        $id = $feedback->getId();
-        $roomID = $feedback->getRoomId();
+        $id          = $feedback->getId();
+        $roomID      = $feedback->getRoomId();
         $userAccount = $feedback->getUserAccount();
-        $rate = $feedback->getRate();
-        $comment = $feedback->getComment();
+        $rate        = $feedback->getRate();
+        $comment     = $feedback->getComment();
 
         $sql = "UPDATE feedback SET
                 roomID = $roomID,
@@ -85,7 +97,7 @@ class FeedbackRepository extends BaseRepository {
                 comment = '$comment'
                 WHERE id = $id";
 
-        if ($conn->query($sql) === TRUE) {
+        if ($conn->query($sql) === true) {
             return true;
         }
 
@@ -93,13 +105,14 @@ class FeedbackRepository extends BaseRepository {
         return false;
     }
 
-    function delete(Feedback $feedback) {
+    public function delete(Feedback $feedback)
+    {
         global $conn;
         $id = $feedback->getId();
 
         $sql = "DELETE FROM feedback WHERE id = $id";
 
-        if ($conn->query($sql) === TRUE) {
+        if ($conn->query($sql) === true) {
             return true;
         }
 
@@ -107,4 +120,3 @@ class FeedbackRepository extends BaseRepository {
         return false;
     }
 }
-?>

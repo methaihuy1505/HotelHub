@@ -22,7 +22,7 @@ class ServiceTypeRepository extends BaseRepository
         $result = $conn->query($sql);
         if ($result && $result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                $type    = new ServiceType($row["idServiceType"], $row["typeName"], $row["describe"]);
+                $type    = new ServiceType($row["idServiceType"], $row["typeName"], $row["serviceDescribe"]);
                 $types[] = $type;
             }
         }
@@ -75,8 +75,8 @@ class ServiceTypeRepository extends BaseRepository
     public function save($data)
     {
         global $conn;
-        $sql = "INSERT INTO servicetype (typeName, describe)
-                VALUES ('{$data['typeName']}', '{$data['describe']}')";
+        $sql = "INSERT INTO servicetype (typeName, serviceDescribe)
+                VALUES ('{$data['typeName']}', '{$data['serviceDescribe']}')";
         return $conn->query($sql) ? $conn->insert_id : false;
     }
 
@@ -85,7 +85,7 @@ class ServiceTypeRepository extends BaseRepository
         global $conn;
         $sql = "UPDATE servicetype SET
                 typeName = '{$type->getTypeName()}',
-                describe = '{$type->getDescribe()}'
+                serviceDescribe = '{$type->getDescribe()}'
                 WHERE idServiceType = {$type->getIdServiceType()}";
         return $conn->query($sql);
     }

@@ -1,9 +1,11 @@
 <?php
-class RoomRepository extends BaseRepository {
+class RoomRepository extends BaseRepository
+{
 
-    protected function fetchAll($condition = null, $sort = null, $limit = null) {
+    protected function fetchAll($condition = null, $sort = null, $limit = null)
+    {
         global $conn;
-        $rooms = array();
+        $rooms = [];
 
         $sql = "SELECT * FROM room";
         if ($condition) {
@@ -19,13 +21,16 @@ class RoomRepository extends BaseRepository {
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
+            $roomMapRepo = new RoomAmenityMapRepository();
             while ($row = $result->fetch_assoc()) {
                 $room = new Room(
                     $row["roomId"], $row["roomType"], $row["roomNumber"],
                     $row["discount_percent"], $row["price"], $row["status"],
-                    $row["describe"], $row["rating"], $row["feedbackCount"],
+                    $row["describeDetail"], $row["rating"], $row["feedbackCount"],
                     $row["featured_image"]
                 );
+                $amenities = $roomMapRepo->getAmenitiesByRoomId($row["roomId"]);
+                $room->setAmenities($amenities);
                 $rooms[] = $room;
             }
         }
@@ -33,21 +38,23 @@ class RoomRepository extends BaseRepository {
         return $rooms;
     }
 
-    function getAll() {
+    public function getAll()
+    {
         return $this->getBy();
     }
 
-    function getBy($array_conds = array(), $array_sorts = array(), $page = null, $qty_per_page = null) {
+    public function getBy($array_conds = [], $array_sorts = [], $page = null, $qty_per_page = null)
+    {
         if ($page) {
             $page_index = $page - 1;
         }
 
-        $temp = array();
-        foreach($array_conds as $column => $cond) {
+        $temp = [];
+        foreach ($array_conds as $column => $cond) {
             $type = $cond['type'];
-            $val = $cond['val'];
-            $str = "$column $type ";
-            if (in_array($type, array("BETWEEN", "LIKE"))) {
+            $val  = $cond['val'];
+            $str  = "$column $type ";
+            if (in_array($type, ["BETWEEN", "LIKE"])) {
                 $str .= "$val";
             } else {
                 $str .= "'$val'";
@@ -56,8 +63,8 @@ class RoomRepository extends BaseRepository {
         }
         $condition = count($temp) ? implode(" AND ", $temp) : null;
 
-        $temp = array();
-        foreach($array_sorts as $key => $sort) {
+        $temp = [];
+        foreach ($array_sorts as $key => $sort) {
             $temp[] = "$key $sort";
         }
         $sort = count($temp) ? "ORDER BY " . implode(" , ", $temp) : null;
@@ -71,28 +78,30 @@ class RoomRepository extends BaseRepository {
         return $this->fetchAll($condition, $sort, $limit);
     }
 
-    function find($id) {
+    public function find($id)
+    {
         $condition = "roomId = $id";
-        $rooms = $this->fetchAll($condition);
+        $rooms     = $this->fetchAll($condition);
         return current($rooms);
     }
 
-    function save($data) {
+    public function save($data)
+    {
         global $conn;
-        $roomType = $data["roomType"];
-        $roomNumber = $data["roomNumber"];
+        $roomType         = $data["roomType"];
+        $roomNumber       = $data["roomNumber"];
         $discount_percent = $data["discount_percent"];
-        $price = $data["price"];
-        $status = $data["status"];
-        $describe = $data["describe"];
-        $rating = $data["rating"];
-        $feedbackCount = $data["feedbackCount"];
-        $featured_image = $data["featured_image"];
+        $price            = $data["price"];
+        $status           = $data["status"];
+        $describe         = $data["describeDetail"];
+        $rating           = $data["rating"];
+        $feedbackCount    = $data["feedbackCount"];
+        $featured_image   = $data["featured_image"];
 
-        $sql = "INSERT INTO room (roomType, roomNumber, discount_percent, price, status, describe, rating, feedbackCount, featured_image)
+        $sql = "INSERT INTO room (roomType, roomNumber, discount_percent, price, status, describeDetail, rating, feedbackCount, featured_image)
                 VALUES ($roomType, '$roomNumber', $discount_percent, $price, '$status', '$describe', $rating, $feedbackCount, '$featured_image')";
 
-        if ($conn->query($sql) === TRUE) {
+        if ($conn->query($sql) === true) {
             return $conn->insert_id;
         }
 
@@ -100,19 +109,20 @@ class RoomRepository extends BaseRepository {
         return false;
     }
 
-    function update(Room $room) {
+    public function update(Room $room)
+    {
         global $conn;
 
-        $roomId = $room->getId();
-        $roomType = $room->getRoomTypeId();
-        $roomNumber = $room->getRoomNumber();
+        $roomId           = $room->getId();
+        $roomType         = $room->getRoomTypeId();
+        $roomNumber       = $room->getRoomNumber();
         $discount_percent = $room->getDiscountPercent();
-        $price = $room->getPrice();
-        $status = $room->getStatus();
-        $describe = $room->getDescription();
-        $rating = $room->getRating();
-        $feedbackCount = $room->getFeedbackCount();
-        $featured_image = $room->getFeaturedImage();
+        $price            = $room->getPrice();
+        $status           = $room->getStatus();
+        $describe         = $room->getDescription();
+        $rating           = $room->getRating();
+        $feedbackCount    = $room->getFeedbackCount();
+        $featured_image   = $room->getFeaturedImage();
 
         $sql = "UPDATE room SET
                 roomType = $roomType,
@@ -120,13 +130,13 @@ class RoomRepository extends BaseRepository {
                 discount_percent = $discount_percent,
                 price = $price,
                 status = '$status',
-                describe = '$describe',
+                describeDetail = '$describe',
                 rating = $rating,
                 feedbackCount = $feedbackCount,
                 featured_image = '$featured_image'
                 WHERE roomId = $roomId";
 
-        if ($conn->query($sql) === TRUE) {
+        if ($conn->query($sql) === true) {
             return true;
         }
 
@@ -134,12 +144,13 @@ class RoomRepository extends BaseRepository {
         return false;
     }
 
-    function delete(Room $room) {
+    public function delete(Room $room)
+    {
         global $conn;
         $roomId = $room->getId();
-        $sql = "DELETE FROM room WHERE roomId = $roomId";
+        $sql    = "DELETE FROM room WHERE roomId = $roomId";
 
-        if ($conn->query($sql) === TRUE) {
+        if ($conn->query($sql) === true) {
             return true;
         }
 
@@ -147,10 +158,9 @@ class RoomRepository extends BaseRepository {
         return false;
     }
 
-    function getByPattern($pattern) {
+    public function getByPattern($pattern)
+    {
         $condition = "roomNumber LIKE '%$pattern%'";
         return $this->fetchAll($condition);
     }
 }
-
-?>

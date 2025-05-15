@@ -23,4 +23,10 @@ class InvoiceDetail
     {$this->serviceDate = $serviceDate;return $this;}
     public function setBookingRoomID($bookingRoomID)
     {$this->bookingRoomID = $bookingRoomID;return $this;}
+
+    public function getBookingRoom()
+    {
+        $repo = new BookingRoomRepository();
+        return $repo->find($this->bookingRoomID);
+    }
 }

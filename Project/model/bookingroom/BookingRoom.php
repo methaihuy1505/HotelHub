@@ -6,20 +6,22 @@ class BookingRoom
     protected $checkinDate;
     protected $checkoutDate;
     protected $status;
-    protected $roomID;
-    protected $serviceID;
+    protected $userAccountID;
 
-    public function __construct($bookingRoomId, $customerNumbers, $checkinDate, $checkoutDate, $status, $roomID, $serviceID)
+    protected $rooms    = [];
+    protected $services = [];
+
+    public function __construct($bookingRoomId, $customerNumbers, $checkinDate, $checkoutDate, $status, $userAccountID)
     {
         $this->bookingRoomId   = $bookingRoomId;
         $this->customerNumbers = $customerNumbers;
         $this->checkinDate     = $checkinDate;
         $this->checkoutDate    = $checkoutDate;
         $this->status          = $status;
-        $this->roomID          = $roomID;
-        $this->serviceID       = $serviceID;
+        $this->userAccountID   = $userAccountID;
     }
 
+    // Getters
     public function getBookingRoomId()
     {return $this->bookingRoomId;}
     public function getCustomerNumbers()
@@ -30,21 +32,27 @@ class BookingRoom
     {return $this->checkoutDate;}
     public function getStatus()
     {return $this->status;}
-    public function getRoomID()
-    {return $this->roomID;}
-    public function getServiceID()
-    {return $this->serviceID;}
+    public function getUserAccountID()
+    {return $this->userAccountID;}
+    public function getRooms()
+    {return $this->rooms;}
+    public function getServices()
+    {return $this->services;}
 
+    // Setters
     public function setCustomerNumbers($n)
     {$this->customerNumbers = $n;return $this;}
-    public function setCheckinDate($date)
-    {$this->checkinDate = $date;return $this;}
-    public function setCheckoutDate($date)
-    {$this->checkoutDate = $date;return $this;}
+    public function setCheckinDate($d)
+    {$this->checkinDate = $d;return $this;}
+    public function setCheckoutDate($d)
+    {$this->checkoutDate = $d;return $this;}
     public function setStatus($s)
     {$this->status = $s;return $this;}
-    public function setRoomID($id)
-    {$this->roomID = $id;return $this;}
-    public function setServiceID($id)
-    {$this->serviceID = $id;return $this;}
+    public function setUserAccountID($id)
+    {$this->userAccountID = $id;return $this;}
+
+    public function setRooms($rooms)
+    {$this->rooms = $rooms;}
+    public function setServices($services)
+    {$this->services = $services;}
 }

@@ -25,7 +25,7 @@ class ServiceRepository extends BaseRepository
             while ($row = $result->fetch_assoc()) {
                 $service = new Service(
                     $row["serviceID"], $row["serviceName"], $row["serviceTypeID"],
-                    $row["price"], $row["describe"], $row["featured_img"]
+                    $row["price"], $row["describeDetail"], $row["featured_img"]
                 );
                 $services[] = $service;
             }
@@ -80,9 +80,9 @@ class ServiceRepository extends BaseRepository
     public function save($data)
     {
         global $conn;
-        $sql = "INSERT INTO service (serviceName, serviceTypeID, price, describe, featured_img)
+        $sql = "INSERT INTO service (serviceName, serviceTypeID, price, describeDetail, featured_img)
                 VALUES ('{$data['serviceName']}', '{$data['serviceTypeID']}', '{$data['price']}',
-                        '{$data['describe']}', '{$data['featured_img']}')";
+                        '{$data['describeDetail']}', '{$data['featured_img']}')";
         return $conn->query($sql) ? $conn->insert_id : false;
     }
 
@@ -93,7 +93,7 @@ class ServiceRepository extends BaseRepository
                 serviceName = '{$service->getServiceName()}',
                 serviceTypeID = '{$service->getServiceTypeID()}',
                 price = '{$service->getPrice()}',
-                describe = '{$service->getDescribe()}',
+                describeDetail = '{$service->getDescribe()}',
                 featured_img = '{$service->getFeaturedImg()}'
                 WHERE serviceID = {$service->getServiceID()}";
         return $conn->query($sql);

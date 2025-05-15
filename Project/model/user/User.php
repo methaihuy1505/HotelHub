@@ -41,4 +41,9 @@ class User
     {$this->loginBy = $loginBy;return $this;}
     public function setIsActive($isActive)
     {$this->isActive = $isActive;return $this;}
+    public function getUserAccount()
+    {
+        $repo = new UserAccountRepository();
+        return $repo->find($this->userAccountID);
+    }
 }
