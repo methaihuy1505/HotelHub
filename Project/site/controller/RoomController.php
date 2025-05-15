@@ -1,5 +1,5 @@
 <?php 
-class ProductController{
+class RoomController{
     function index(){
         // $productRepository=new ProductRepository();
         // $conds=[];
@@ -42,7 +42,7 @@ class ProductController{
         //     };
         // }
         // $products=$productRepository->getBy($conds,$sorts,$page,$item_per_page);
-        require "view/product/index.php";
+        require "view/room/index.php";
     }
 }
 ?>
