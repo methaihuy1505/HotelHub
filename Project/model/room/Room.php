@@ -15,18 +15,21 @@ class Room
     protected $featured_image;
     protected $amenities = [];
 
-    public function __construct($roomId, $roomType, $roomNumber, $discount_percent, $price, $status, $describe, $rating, $feedbackCount)
+    public function __construct($roomId, $roomType, $roomNumber, $discount_percent, $price, $status, $describe, $rating, $feedbackCount, $featured_image)
     {
         $this->roomId           = $roomId;
         $this->roomType         = $roomType;
         $this->roomNumber       = $roomNumber;
         $this->discount_percent = $discount_percent;
         $this->price            = $price;
-        $this->sale_price       = $price - $price * ($discount_percent / 100);
-        $this->status           = $status;
-        $this->describe         = $describe;
-        $this->rating           = $rating;
-        $this->feedbackCount    = $feedbackCount;
+        $this->sale_price       = (is_numeric($price) && is_numeric($discount_percent))
+        ? (float) $price - (float) $price * ((float) $discount_percent / 100)
+        : 0;
+        $this->status         = $status;
+        $this->describe       = $describe;
+        $this->rating         = $rating;
+        $this->featured_image = $featured_image;
+        $this->feedbackCount  = $feedbackCount;
     }
 
     public function getRoomId()

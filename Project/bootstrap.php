@@ -1,3 +1,27 @@
-<?php 
-
-?>
+<?php
+require_once "model/base/BaseRepository.php";
+require_once "model/amenities/Amenities.php";
+require_once "model/amenities/AmenitiesRepository.php";
+require_once "model/room_amenity_map/RoomAmenityMapRepository.php";
+require_once "model/bookingroom/BookingRoom.php";
+require_once "model/bookingroom/BookingRoomRepository.php";
+require_once "model/booking_room_map/BookingRoomMapRepository.php";
+require_once "model/booking_service_map/BookingServiceMapRepository.php";
+require_once "model/feedback/FeedBack.php";
+require_once "model/feedback/FeedBackRepository.php";
+require_once "model/invoice/Invoice.php";
+require_once "model/invoice/InvoiceRepository.php";
+require_once "model/invoicedetail/InvoiceDetail.php";
+require_once "model/invoicedetail/InvoiceDetailRepository.php";
+require_once "model/room/Room.php";
+require_once "model/room/RoomRepository.php";
+require_once "model/roomtype/RoomType.php";
+require_once "model/roomtype/RoomTypeRepository.php";
+require_once "model/service/Service.php";
+require_once "model/service/ServiceRepository.php";
+require_once "model/servicetype/ServiceType.php";
+require_once "model/servicetype/ServiceTypeRepository.php";
+require_once "model/user/User.php";
+require_once "model/user/UserRepository.php";
+require_once "model/useraccount/UserAccount.php";
+require_once "model/useraccount/UserAccountRepository.php";

@@ -1,32 +1,27 @@
-<?php 
-class HomeController{
-    function index(){
-        // $productRepository=new ProductRepository();
-        // $cond=[];
-        // $sort=["featured"=>"DESC"];
-        // $page=1;
-        // $item_per_page=4;
-        // //Lấy 4 sản phẩm nổi bật
-        // $featuredProducts=$productRepository->getBy($cond,$sort,$page,$item_per_page);
-        // //Lấy 4 sản phẩm mới nhất
-        // $sort=["created_date"=>"DESC"];
-        // $newestProducts=$productRepository->getBy($cond,$sort,$page,$item_per_page);
-        // //Lấy tất cả danh mục và tất cả sản phẩm thuộc từng loại danh mục tương ứng
-        // $categoryRepository=new CategoryRepository();
-        // $categories=$categoryRepository->getAll();
-        // $categoryProducts=[];
-        // foreach($categories as $category){
-        //     $cond=[
-        //         "category_id"=>[
-        //             "type"=>"=",
-        //             "val"=>$category->getID()
-        //         ]
-        //         ];
-        //     $products=$productRepository->getBy($cond,$sort,$page,$item_per_page);
-        //     $categoryProducts[$category->getName()]=$products;
-        // } 
-        
+<?php
+class HomeController
+{
+    public function index()
+    {
+        $roomRepository        = new RoomRepository();
+        $serviceRepository     = new ServiceRepository();
+        $feedbackRepository    = new FeedBackRepository();
+        $useraccountRepository = new UserAccountRepository;
+
+        $cond          = [];                   // Không lọc gì cả
+        $sort          = ["rating" => "DESC"]; // Sắp xếp theo rating giảm dần
+        $page          = 1;
+        $item_per_page = 4; // Chỉ lấy 4 phòng
+        $topRatedRooms = $roomRepository->getBy($cond, $sort, $page, $item_per_page);
+
+        $sortService           = []; // Không cần sắp xếp nếu không yêu cầu
+        $item_per_page_service = 6;  // Lấy 6 service
+        $services              = $serviceRepository->getBy($cond, $sortService, $page, $item_per_page_service);
+
+        $sortFeedback           = []; // Không cần sắp xếp nếu không yêu cầu
+        $item_per_page_feedback = 2;  // Lấy 2 feedback
+        $feedbacks              = $feedbackRepository->getBy($cond, $sortFeedback, $page, $item_per_page_feedback);
+
         require "view/home/index.php";
     }
 }
-?>

@@ -24,14 +24,21 @@
                     <li class="nav-item"><a class="nav-link p-2" href="index.php">Home</a></li>
                     <li class="nav-item"><a class="nav-link p-2" href="index.php?c=room">Rooms</a></li>
                     <li class="nav-item">
-                        <a class="nav-link p-2" href="#">Feedback</a>
+                        <a class="nav-link p-2" href="index.php?c=feedback">Feedback</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link p-2" href="#">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link p-2" data-toggle="modal" data-target="#authModal" href="#"><i
-                                class="fas fa-user"></i></a>
+                        <?php if (isset($_SESSION['user'])): ?>
+                        <a class="nav-link p-2" href="index.php?c=userinfo"><i class="fas fa-user"></i> Xin chào,
+                            <?php echo $_SESSION['user']->getUserAccount()->getFullName(); ?></a>
+                        <?php else: ?>
+                        <!-- Nếu chưa đăng nhập -->
+                        <a href="#" data-toggle="modal" data-target="#authModal">
+                            <i class="fas fa-user"></i>
+                        </a>
+                        <?php endif; ?>
                     </li>
                 </ul>
             </div>

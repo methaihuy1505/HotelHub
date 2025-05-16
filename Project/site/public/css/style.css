@@ -262,10 +262,6 @@ img[alt="logo"] {
   box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
   margin-bottom: 3rem;
 }
-.blog-section {
-  background-color: #fcfdd7;
-  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
-}
 
 .facilities i {
   font-size: 2rem;

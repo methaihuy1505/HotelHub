@@ -36,12 +36,12 @@ class BookingRoomMapRepository extends BaseRepository
                     $row['roomNumber'],
                     $row['price'],
                     $row['status'],
-                    $row['describe'],
+                    $row['describeDetail'],
                     $row['discount_percent'],
                     $row['sale_price'],
                     $row['rating'],
-                    $row['feedbackCount'],
-                    $row['featured_image']
+                    $row['featured_image'],
+                    $row['feedbackCount']
                 );
             }
         }

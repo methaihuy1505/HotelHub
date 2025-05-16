@@ -35,7 +35,7 @@ class BookingServiceMapRepository extends BaseRepository
                     $row['serviceName'],
                     $row['serviceTypeID'],
                     $row['price'],
-                    $row['describe'],
+                    $row['describeDetail'],
                     $row['featured_img']
                 );
             }

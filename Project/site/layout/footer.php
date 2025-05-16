@@ -40,15 +40,16 @@
                 </div>
                 <hr />
                 <div id="loginForm">
-                    <form>
+                    <form id="loginFormActual" method="POST" action="index.php?c=userinfo&a=login">
                         <div class="form-group">
                             <label for="email">Email hoặc Tên đăng nhập</label>
-                            <input type="text" class="form-control" id="email"
+                            <input type="text" class="form-control" name="email" id="email"
                                 placeholder="Nhập email hoặc tên đăng nhập" />
                         </div>
                         <div class="form-group">
                             <label for="password">Mật khẩu</label>
-                            <input type="password" class="form-control" id="password" placeholder="Nhập mật khẩu" />
+                            <input type="password" class="form-control" name="password" id="password"
+                                placeholder="Nhập mật khẩu" />
                         </div>
                         <button type="submit" class="btn btn-primary btn-block">
                             Đăng nhập
@@ -111,10 +112,21 @@
     </div>
 </div>
 
+
 <script src="../../site/public/vendor/jquery-3.5.1.min.js"></script>
 <script src="../../site/public/vendor/popper.min.js"></script>
 <script src="../../site/public/vendor/bootstrap/js/bootstrap.min.js"></script>
 <script src="../../site/public/js/script.js"></script>
+<?php if (isset($_SESSION['login_error'])): ?>
+<script>
+// Mở modal login khi có lỗi
+$(document).ready(function() {
+    $('#authModal').modal('show');
+    document.getElementById("loginForm").insertAdjacentHTML("afterbegin",
+        `<div class="alert alert-danger"><?php echo $_SESSION['login_error']; ?></div>`);
+});
+</script>
+<?php unset($_SESSION['login_error']);endif; ?>
 </body>
 
 </html>

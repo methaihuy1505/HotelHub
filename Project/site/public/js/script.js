@@ -1,4 +1,4 @@
-window.onload = function () {
+$(document).ready(function () {
   $("#showLogin").click(function () {
     $("#registerForm").fadeOut(200, function () {
       $("#loginForm").fadeIn(200);
@@ -12,9 +12,6 @@ window.onload = function () {
       $("#authModalLabel").text("Đăng ký");
     });
   });
-};
-
-$(document).ready(function () {
   // HomePage
   const $items = $(".rotating-content");
   if ($items) {

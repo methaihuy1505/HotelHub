@@ -15,7 +15,7 @@ class RoomAmenityMapRepository extends BaseRepository
         return $conn->query($sql);
     }
 
-    public function getAmenitiesByRoom($roomId)
+    public function getAmenitiesByRoomId($roomId)
     {
         global $conn;
         $sql = "SELECT a.* FROM amenities a
@@ -52,7 +52,7 @@ class RoomAmenityMapRepository extends BaseRepository
                     $row['roomNumber'],
                     $row['price'],
                     $row['status'],
-                    $row['describe'],
+                    $row['describeDetail'],
                     $row['discount_percent'],
                     $row['sale_price'],
                     $row['rating'],
