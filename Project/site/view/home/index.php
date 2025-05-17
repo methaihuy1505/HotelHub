@@ -6,7 +6,9 @@
         <h1>MeMe Hotel</h1>
         <div class="overlay">
             <form class="form-inline">
-
+                <select class="form-control mr-2">
+                    <option>Select Branch</option>
+                </select>
                 <label for="dateCheckIn">Check in<input id="dateCheckIn" type="date" class="form-control" /></label>
                 <label for="dateCheckOut">Check out<input id="dateCheckOut" type="date" class="form-control" /></label>
                 <a href="#">Check <br />
@@ -52,27 +54,27 @@
             <div class="row">
                 <div class="col">
                     <i class="fas fa-utensils"></i>
-                    <p>Nhà Hàng</p>
+                    <p><?php echo $services[0]->getServiceName() ?></p>
                 </div>
                 <div class="col">
                     <i class="fas fa-cocktail"></i>
-                    <p>Bar</p>
+                    <p><?php echo $services[1]->getServiceName() ?></p>
                 </div>
                 <div class="col">
                     <i class="fas fa-shuttle-van"></i>
-                    <p>Đưa Đón</p>
+                    <p><?php echo $services[2]->getServiceName() ?></p>
                 </div>
                 <div class="col">
                     <i class="fas fa-swimmer"></i>
-                    <p>Hồ Bơi</p>
+                    <p><?php echo $services[3]->getServiceName() ?></p>
                 </div>
                 <div class="col">
                     <i class="fas fa-spa"></i>
-                    <p>Spa</p>
+                    <p><?php echo $services[4]->getServiceName() ?></p>
                 </div>
                 <div class="col">
                     <i class="fas fa-dumbbell"></i>
-                    <p>Gym</p>
+                    <p><?php echo $services[5]->getServiceName() ?></p>
                 </div>
             </div>
         </div>
@@ -100,7 +102,28 @@
             </button>
         </div>
     </section>
-
+    <!-- Blog -->
+    <section class="blog-section container-fluid py-5">
+        <h3 class="text-center">Our Blog</h3>
+        <div class="row">
+            <div class="col-md-4">
+                <a href="#">
+                    <img src="../../../upload/vip1.jpg" class="img-fluid mb-3" />
+                    <p>Tiệc Cocktail tại MeMe Hotel</p>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="#"><img src="../../../upload/vip1.jpg" class="img-fluid mb-3" />
+                    <p>Massage & Ẩm Thực Thiền</p>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="#"><img src="../../../upload/vip1.jpg" class="img-fluid mb-3" />
+                    <p>Buffet sang trọng & hơn 50 món ngon</p>
+                </a>
+            </div>
+        </div>
+    </section>
 
     <!-- Testimonials -->
     <section class="container py-5">

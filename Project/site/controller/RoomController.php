@@ -31,6 +31,7 @@ class RoomController
         $sortFeedback           = []; // Không cần sắp xếp nếu không yêu cầu
         $item_per_page_feedback = 3;  // Lấy 2 feedback
         $feedbacks              = $feedbackRepository->getBy($cond, $sortFeedback, $page, $item_per_page_feedback);
+
         require "view/room/index.php";
     }
 }

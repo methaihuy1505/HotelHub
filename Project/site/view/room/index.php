@@ -27,7 +27,12 @@
                 <div class="form-group col-xs-12 col-sm-6">
                     <label for="price">Giá:</label>
                     <select class="form-control" id="price">
-                        <option id="price-option"></option>
+                        <option value="1.700.000-2.500.000đ">
+                            1.700.000-2.500.000đ
+                        </option>
+                        <option value="2.600.000-3.500.000đ">
+                            2.600.000-3.500.000đ
+                        </option>
                     </select>
                 </div>
                 <div class="form-group col-lg-12">
@@ -173,25 +178,6 @@
     </div>
 </div>
 
-<script>
-// Tạo map loại phòng -> giá từ PHP sang JS
-const roomtypePrices = <?php echo json_encode($roomtypePrices); ?>;
 
-const roomtypeSelect = document.getElementById("roomtype");
-const priceOption = document.getElementById("price-option");
-
-function updatePrice() {
-    const selectedType = roomtypeSelect.value.trim();
-    const price = roomtypePrices[selectedType] || 'Không xác định';
-    priceOption.textContent = price;
-    priceOption.value = price;
-}
-
-// Lần đầu gán giá trị
-updatePrice();
-
-// Khi thay đổi loại phòng
-roomtypeSelect.addEventListener("change", updatePrice);
-</script>
 
 <?php require "layout/footer.php"?>

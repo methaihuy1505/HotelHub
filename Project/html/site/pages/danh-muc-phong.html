@@ -118,7 +118,14 @@
                 <p class="coupon">2,200,000 VND</p>
                 <p class="price">1,800,000 VND</p>
                 <a href="#"><button class="btn">Book Now</button></a>
-                <a href="#"><button class="btn">Detail</button></a>
+                <button
+                  type="button"
+                  class="btn"
+                  data-toggle="modal"
+                  data-target="#vipModal"
+                >
+                  Detail
+                </button>
               </div>
             </div>
           </div>
@@ -131,7 +138,14 @@
                 <p class="coupon">2,300,000 VND</p>
                 <p class="price">1,900,000 VND</p>
                 <a href="#"><button class="btn">Book Now</button></a>
-                <a href="#"><button class="btn">Detail</button></a>
+                <button
+                  type="button"
+                  class="btn"
+                  data-toggle="modal"
+                  data-target="#vipModal"
+                >
+                  Detail
+                </button>
               </div>
             </div>
           </div>
@@ -144,7 +158,14 @@
                 <p class="coupon">2,300,000 VND</p>
                 <p class="price">2,000,000 VND</p>
                 <a href="#"><button class="btn">Book Now</button></a>
-                <a href="#"><button class="btn">Detail</button></a>
+                <button
+                  type="button"
+                  class="btn"
+                  data-toggle="modal"
+                  data-target="#vipModal"
+                >
+                  Detail
+                </button>
               </div>
             </div>
           </div>
@@ -163,7 +184,14 @@
                 <p class="coupon">2,300,000 VND</p>
                 <p class="price">1,500,000 VND</p>
                 <a href="#"><button class="btn">Book Now</button></a>
-                <a href="#"><button class="btn">Detail</button></a>
+                <button
+                  type="button"
+                  class="btn"
+                  data-toggle="modal"
+                  data-target="#vipModal"
+                >
+                  Detail
+                </button>
               </div>
             </div>
           </div>
@@ -176,7 +204,14 @@
                 <p class="coupon">2,300,000 VND</p>
                 <p class="price">1,600,000 VND</p>
                 <a href="#"><button class="btn">Book Now</button></a>
-                <a href="#"><button class="btn">Detail</button></a>
+                <button
+                  type="button"
+                  class="btn"
+                  data-toggle="modal"
+                  data-target="#vipModal"
+                >
+                  Detail
+                </button>
               </div>
             </div>
           </div>
@@ -189,14 +224,133 @@
                 <p class="coupon">2,300,000 VND</p>
                 <p class="price">1,700,000 VND</p>
                 <a href="#"><button class="btn">Book Now</button></a>
-                <a href="#"><button class="btn">Detail</button></a>
+                <button
+                  type="button"
+                  class="btn"
+                  data-toggle="modal"
+                  data-target="#vipModal"
+                >
+                  Detail
+                </button>
               </div>
             </div>
           </div>
         </div>
       </section>
     </main>
+    <!-- Modal Box Detail Room -->
+    <div
+      class="modal fade"
+      id="vipModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="vipModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="vipModalLabel">
+              Phòng V.I.P 1 <i class="fas fa-star text-warning"></i
+              ><i class="fas fa-star text-warning"></i
+              ><i class="fas fa-star text-warning"></i
+              ><i class="fas fa-star text-warning"></i
+              ><i class="fas fa-star text-warning"></i>
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Đóng"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
 
+          <div class="modal-body">
+            <!-- Trạng thái phòng -->
+            <p class="text-muted">
+              Chỉ còn lại <strong style="color: blue">3 phòng trống</strong>
+            </p>
+
+            <!-- Đánh giá tổng quát -->
+            <div class="d-flex align-items-center bg-light p-3 rounded mb-3">
+              <div
+                class="mr-3 text-primary"
+                style="font-size: 2rem; font-weight: bold"
+              >
+                9/10
+              </div>
+              <div>
+                <div>
+                  <strong>Rất tốt</strong>
+                  <i class="fas fa-star text-warning"></i>
+                </div>
+                <a href="#">200 đánh giá ></a>
+              </div>
+            </div>
+
+            <!-- Các đánh giá -->
+            <div class="mb-3">
+              <div class="border p-2 rounded mb-2">
+                <strong>Huấn rô sè:</strong> Phòng rất tốt cho 10d
+                <span class="float-right text-muted">8.5/10</span>
+              </div>
+              <div class="border p-2 rounded mb-2">
+                <strong>Lão Tôn:</strong> Phòng này dễ ngủ vl
+                <span class="float-right text-muted">8/10</span>
+              </div>
+              <div class="border p-2 rounded mb-2">
+                <strong>Ronaldo:</strong> Tuyệt vời, SIUUUUUUUUU!!!!!!!!!
+                <span class="float-right text-muted">7/10</span>
+              </div>
+            </div>
+
+            <!-- Cơ sở vật chất -->
+            <h6 class="font-weight-bold">Cơ sở vật chất</h6>
+            <div class="row mb-3">
+              <div class="col-6 mb-2">
+                <i class="fas fa-snowflake mr-2 text-info"></i> AC
+              </div>
+              <div class="col-6 mb-2">
+                <i class="fas fa-wifi mr-2 text-info"></i> Wifi
+              </div>
+              <div class="col-6 mb-2">
+                <i class="fas fa-utensils mr-2 text-info"></i> Nhà hàng
+              </div>
+              <div class="col-6 mb-2">
+                <i class="fas fa-elevator mr-2 text-info"></i> Thang máy
+              </div>
+              <div class="col-6 mb-2">
+                <i class="fas fa-concierge-bell mr-2 text-info"></i> Tiếp tân
+              </div>
+            </div>
+
+            <!-- Mô tả -->
+            <h6 class="font-weight-bold">Mô tả</h6>
+            <p>
+              Phòng V.I.P 1 tại MeMe hotel được thiết kế theo phong cách ấm
+              cúng, tinh tế, tạo không gian riêng tư lý tưởng cho những buổi
+              tiệc nhỏ hay tiếp khách quan trọng. Nơi đây mang đến trải nghiệm
+              thoải mái & đẳng cấp cho mọi khách hàng.
+            </p>
+          </div>
+
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Đóng
+            </button>
+            <button type="button" class="btn btn-success">
+              Đặt phòng ngay
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- Footer -->
     <footer class="text-center">
       <div class="container">

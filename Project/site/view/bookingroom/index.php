@@ -3,23 +3,48 @@
     <section class="container py-3">
         <div class="container">
             <div class="row align-items-center">
-                <div class="check-in">
-                    <label for="checkin">Check in</label>
-                    <input type="date" class="form-control form-control-sm" id="checkin" />
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-3 mb-2 mb-md-0">
+                            <select class="form-control form-control-sm mb-2">
+                                <option>Select Branch</option>
+                                <option value="TPHCM">
+                                    <a class="dropdown-item" href="#">TP.HCM</a>
+                                </option>
+                                <option value="ANGIANG">
+                                    <a class="dropdown-item" href="#">An Giang</a>
+                                </option>
+                                <option value="TIENGIANG">
+                                    <a class="dropdown-item" href="#">Tiền Giang</a>
+                                </option>
+                                <option value="HAIPHONG">
+                                    <a class="dropdown-item" href="#">Hải Phòng</a>
+                                </option>
+                                <option value="DAKLAK">
+                                    <a class="dropdown-item" href="#">Đắk Lắk</a>
+                                </option>
+                                <option value="DANANG">
+                                    <a class="dropdown-item" href="#">Đà Nẵng</a>
+                                </option>
+                            </select>
+                        </div>
+                        <div class="check-in">
+                            <label for="checkin">Check in</label>
+                            <input type="date" class="form-control form-control-sm" id="checkin" />
+                        </div>
+                        <div class="check-out">
+                            <label for="checkout">Check out </label>
+                            <input type="date" class="form-control form-control-sm" id="checkout" />
+                        </div>
+                        <div class="col-md-3 text-right">
+                            <a href="index.php?c=payment" class="btn btn-link position-relative">
+                                <i class="fa fa-file-invoice-dollar fa-2x"></i>
+                                <span class="badge badge-danger rounded-circle position-absolute"
+                                    style="top: -5px; right: 0px">1</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="check-out">
-                    <label for="checkout">Check out </label>
-                    <input type="date" class="form-control form-control-sm" id="checkout" />
-                </div>
-                <div class="col-md-3 text-right">
-                    <a href="index.php?c=payment" class="btn btn-link position-relative">
-                        <i class="fa fa-file-invoice-dollar fa-2x"></i>
-                        <span class="badge badge-danger rounded-circle position-absolute"
-                            style="top: -5px; right: 0px">1</span>
-                    </a>
-                </div>
-            </div>
-        </div>
     </section>
     <div class="container mt-4">
         <div class="row">
@@ -31,7 +56,7 @@
                 </div>
                 <div class="filter-group mb-3">
                     <h3>Khoảng giá</h3>
-                    <select class="form-control form-control-sm mb-2" id="roomtype">
+                    <select class="form-control form-control-sm mb-2">
                         <?php foreach ($roomtypes as $roomtype): ?>
 
                         <option value="<?php echo $roomtype->getTypeName() ?>"
@@ -42,11 +67,17 @@
                         <?php endforeach; ?>
 
                     </select>
-                    <div class="form-group  ">
-                        <label for="price">Giá:</label>
-                        <select class="form-control" id="price">
-                            <option id="price-option"></option>
-                        </select>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="price" id="price1" />
+                        <label class="form-check-label" for="price1">250.000-300.000 VND</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="price" id="price2" />
+                        <label class="form-check-label" for="price2">300.000-600.000 VND</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="price" id="price3" />
+                        <label class="form-check-label" for="price3">600.000-2.000.000 VND</label>
                     </div>
                 </div>
 
@@ -99,16 +130,13 @@
                                 <div class="col-md-8">
                                     <div class="card-body">
                                         <h5 class="card-title">
-                                            <?php echo $room->getRoomTypeDetail()->getTypeName() ?> <span class="star"><?php $rating = $room->getRating();
-    $fullStars                                                                                                                           = floor($rating);
-    $halfStar                                                                                                                            = ($rating - $fullStars) >= 0.5 ? true : false;
-
-    for ($i = 0; $i < $fullStars; $i++) {
-        echo "★";
-    }
-    if ($halfStar) {
-    echo "☆";
-}?></span>
+                                            <?php echo $room->getRoomTypeDetail()->getTypeName() ?>
+                                            <span class="star">
+                                                <?php $rating = $room->getRating();
+                                                    $fullStars                                                    = floor($rating);
+                                                    $halfStar                                                     = ($rating - $fullStars) >= 0.5 ? true : false;
+                                                for ($i = 0; $i < $fullStars; $i++) {echo "★";}
+                                                if ($halfStar) {echo "☆";}?></span>
                                         </h5>
                                         <ul class="list-unstyled">
                                             <?php
@@ -184,24 +212,5 @@
         </div>
     </div>
 </main>
-<script>
-// Tạo map loại phòng -> giá từ PHP sang JS
-const roomtypePrices = <?php echo json_encode($roomtypePrices); ?>;
 
-const roomtypeSelect = document.getElementById("roomtype");
-const priceOption = document.getElementById("price-option");
-
-function updatePrice() {
-    const selectedType = roomtypeSelect.value.trim();
-    const price = roomtypePrices[selectedType] || 'Không xác định';
-    priceOption.textContent = price;
-    priceOption.value = price;
-}
-
-// Lần đầu gán giá trị
-updatePrice();
-
-// Khi thay đổi loại phòng
-roomtypeSelect.addEventListener("change", updatePrice);
-</script>
 <?php require "layout/footer.php"?>
