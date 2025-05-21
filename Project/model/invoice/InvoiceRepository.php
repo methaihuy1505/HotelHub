@@ -45,8 +45,7 @@ class InvoiceRepository extends BaseRepository
         FROM invoice i
         JOIN invoicedetail id ON i.invoiceDetailID = id.invoiceDetailID
         JOIN bookingroom b ON id.bookingRoomID = b.bookingRoomID
-        WHERE b.userAccountID = '$userAccountId'
-    ";
+        WHERE b.userAccountID = '$userAccountId'";
 
         $result = $conn->query($sql);
 
@@ -85,7 +84,7 @@ class InvoiceRepository extends BaseRepository
         $tax             = $data['tax'] ?? 0;
         $finalAmount     = $data['finalAmount'] ?? 0;
         $status          = $data['status'] ?? 0;
-        $paymentType     = $data['paymentType'] ?? '';
+        $paymentType     = $data['paymentType'] ?? 0;
         $invoiceDate     = $data['invoiceDate'] ?? date('Y-m-d');
         $paymentDate     = $data['paymentDate'] ?? null;
 
@@ -93,7 +92,7 @@ class InvoiceRepository extends BaseRepository
         $paymentDate     = $paymentDate ? "'$paymentDate'" : "NULL";
 
         $sql = "INSERT INTO invoice (invoiceDetailID, discount, tax, finalAmount, status, paymentType, invoiceDate, paymentDate) VALUES
-                ($invoiceDetailID, $discount, $tax, $finalAmount, $status, '$paymentType', '$invoiceDate', $paymentDate)";
+                ($invoiceDetailID, $discount, $tax, $finalAmount, $status, $paymentType, '$invoiceDate', $paymentDate)";
 
         if ($conn->query($sql) === true) {
             return $conn->insert_id;
@@ -119,7 +118,7 @@ class InvoiceRepository extends BaseRepository
         $paymentDate     = $paymentDate ? "'$paymentDate'" : "NULL";
 
         $sql = "UPDATE invoice SET invoiceDetailID=$invoiceDetailID, discount=$discount, tax=$tax, finalAmount=$finalAmount,
-                status=$status, paymentType='$paymentType', invoiceDate='$invoiceDate', paymentDate=$paymentDate WHERE invoiceID='$invoiceID'";
+                status=$status, paymentType=$paymentType, invoiceDate='$invoiceDate', paymentDate=$paymentDate WHERE invoiceID=$invoiceID";
 
         if ($conn->query($sql) === true) {
             return true;
@@ -132,7 +131,7 @@ class InvoiceRepository extends BaseRepository
     {
         global $conn;
         $invoiceID = $invoice->getInvoiceID();
-        $sql       = "DELETE FROM invoice WHERE invoiceID='$invoiceID'";
+        $sql       = "DELETE FROM invoice WHERE invoiceID=$invoiceID";
 
         if ($conn->query($sql) === true) {
             return true;

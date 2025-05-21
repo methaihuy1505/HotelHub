@@ -77,4 +77,11 @@ class UserAccount
         $feedbackRepo = new FeedBackRepository();
         return $feedbackRepo->getByUserAccountId($this->idAccount);
     }
+
+    public function getBlogs()
+    {
+        $repo = new BlogRepository();
+        return $repo->getByUserAccountId($this->idAccount);
+    }
+
 }

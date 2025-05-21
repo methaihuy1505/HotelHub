@@ -14,8 +14,9 @@ class Room
     protected $feedbackCount;
     protected $featured_image;
     protected $amenities = [];
+    protected $branchID;
 
-    public function __construct($roomId, $roomType, $roomNumber, $discount_percent, $price, $status, $describe, $rating, $feedbackCount, $featured_image)
+    public function __construct($roomId, $roomType, $roomNumber, $discount_percent, $price, $status, $describe, $rating, $feedbackCount, $featured_image, $branchID)
     {
         $this->roomId           = $roomId;
         $this->roomType         = $roomType;
@@ -30,6 +31,7 @@ class Room
         $this->rating         = $rating;
         $this->featured_image = $featured_image;
         $this->feedbackCount  = $feedbackCount;
+        $this->branchID       = $branchID;
     }
 
     public function getRoomId()
@@ -92,6 +94,11 @@ class Room
         return $this->amenities;
     }
 
+    public function getBranchID()
+    {
+        return $this->branchID;
+    }
+
     public function setRoomType($roomType)
     {
         $this->roomType = $roomType;
@@ -151,6 +158,12 @@ class Room
     public function setAmenities($amenities)
     {
         $this->amenities = $amenities;
+    }
+
+    public function setBranchID($branchID)
+    {
+        $this->branchID = $branchID;
+        return $this;
     }
 
     public function getRoomTypeDetail()

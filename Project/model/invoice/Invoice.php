@@ -60,6 +60,16 @@ class Invoice
     public function setPaymentDate($paymentDate)
     {$this->paymentDate = $paymentDate;return $this;}
 
+    public function getStatusInvoiceObj()
+    {
+        $repo = new InvoiceStatusRepository();
+        return $repo->find($this->status);
+    }
+    public function getPaymentTypeObj()
+    {
+        $repo = new PaymentTypeRepository();
+        return $repo->find($this->paymentType);
+    }
     public function getInvoiceDetail()
     {
         $repo = new InvoiceDetailRepository();

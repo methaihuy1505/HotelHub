@@ -1,3 +1,12 @@
 Deployment Diagram
 Các loại tài liệu:
 TL hướng dẫn sử dụng ...
+
+Database:
+Thêm:
+Bảng branch và khóa ngoại vào room
+Bảng statusRoom và khóa ngoại vào room
+Bảng invoiceStatus và khóa ngoại vào invoice
+Bảng paymenttype và khóa ngoại vào invoice
+Bảng role và khóa ngoại vào user
+trigger auto update feedbackCount và rating cho room khi insert 1 feedback mới

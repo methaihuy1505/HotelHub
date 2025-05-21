@@ -1,7 +1,6 @@
 <?php
 class RoomRepository extends BaseRepository
 {
-
     protected function fetchAll($condition = null, $sort = null, $limit = null)
     {
         global $conn;
@@ -24,10 +23,17 @@ class RoomRepository extends BaseRepository
             $roomMapRepo = new RoomAmenityMapRepository();
             while ($row = $result->fetch_assoc()) {
                 $room = new Room(
-                    $row["roomId"], $row["roomType"], $row["roomNumber"],
-                    $row["discount_percent"], $row["price"], $row["status"],
-                    $row["describeDetail"], $row["rating"], $row["feedbackCount"],
-                    $row["featured_image"]
+                    $row["roomId"],
+                    $row["roomType"],
+                    $row["roomNumber"],
+                    $row["discount_percent"],
+                    $row["price"],
+                    $row["status"],
+                    $row["describeDetail"],
+                    $row["rating"],
+                    $row["feedbackCount"],
+                    $row["featured_image"],
+                    $row["branchID"]
                 );
                 $amenities = $roomMapRepo->getAmenitiesByRoomId($row["roomId"]);
                 $room->setAmenities($amenities);
@@ -97,9 +103,10 @@ class RoomRepository extends BaseRepository
         $rating           = $data["rating"];
         $feedbackCount    = $data["feedbackCount"];
         $featured_image   = $data["featured_image"];
+        $branchID         = $data["branchID"];
 
-        $sql = "INSERT INTO room (roomType, roomNumber, discount_percent, price, status, describeDetail, rating, feedbackCount, featured_image)
-                VALUES ($roomType, '$roomNumber', $discount_percent, $price, '$status', '$describe', $rating, $feedbackCount, '$featured_image')";
+        $sql = "INSERT INTO room (roomType, roomNumber, discount_percent, price, status, describeDetail, rating, feedbackCount, featured_image, branchID)
+                VALUES ($roomType, '$roomNumber', $discount_percent, $price, '$status', '$describe', $rating, $feedbackCount, '$featured_image', $branchID)";
 
         if ($conn->query($sql) === true) {
             return $conn->insert_id;
@@ -113,16 +120,17 @@ class RoomRepository extends BaseRepository
     {
         global $conn;
 
-        $roomId           = $room->getId();
-        $roomType         = $room->getRoomTypeId();
+        $roomId           = $room->getRoomId();
+        $roomType         = $room->getRoomType();
         $roomNumber       = $room->getRoomNumber();
         $discount_percent = $room->getDiscountPercent();
         $price            = $room->getPrice();
         $status           = $room->getStatus();
-        $describe         = $room->getDescription();
+        $describe         = $room->getDescribe();
         $rating           = $room->getRating();
         $feedbackCount    = $room->getFeedbackCount();
         $featured_image   = $room->getFeaturedImage();
+        $branchID         = $room->getBranchID();
 
         $sql = "UPDATE room SET
                 roomType = $roomType,
@@ -133,7 +141,8 @@ class RoomRepository extends BaseRepository
                 describeDetail = '$describe',
                 rating = $rating,
                 feedbackCount = $feedbackCount,
-                featured_image = '$featured_image'
+                featured_image = '$featured_image',
+                branchID = $branchID
                 WHERE roomId = $roomId";
 
         if ($conn->query($sql) === true) {
@@ -147,7 +156,7 @@ class RoomRepository extends BaseRepository
     public function delete(Room $room)
     {
         global $conn;
-        $roomId = $room->getId();
+        $roomId = $room->getRoomId();
         $sql    = "DELETE FROM room WHERE roomId = $roomId";
 
         if ($conn->query($sql) === true) {

@@ -19,7 +19,8 @@ class UserRepository extends BaseRepository
                     $row['email'],
                     $row['userAccountID'],
                     $row['loginBy'],
-                    $row['isActive']
+                    $row['isActive'],
+                    (int) $row['role']// ép kiểu int luôn
                 );
                 $users[] = $user;
             }
@@ -55,8 +56,10 @@ class UserRepository extends BaseRepository
         $userAccountID = $data['userAccountID'];
         $loginBy       = $data['loginBy'];
         $isActive      = $data['isActive'] ?? 0;
+        $role          = $data['role'];
 
-        $sql = "INSERT INTO user (loginID, password, email, userAccountID, loginBy, isActive) VALUES ('$loginID', '$password', '$email', '$userAccountID', '$loginBy', $isActive)";
+        $sql = "INSERT INTO user (loginID, password, email, userAccountID, loginBy, isActive, role)
+                VALUES ('$loginID', '$password', '$email', '$userAccountID', '$loginBy', $isActive, $role)";
 
         if ($conn->query($sql) === true) {
             return $loginID;
@@ -74,8 +77,10 @@ class UserRepository extends BaseRepository
         $userAccountID = $user->getUserAccountID();
         $loginBy       = $user->getLoginBy();
         $isActive      = $user->getIsActive();
+        $role          = $user->getRole();
 
-        $sql = "UPDATE user SET password='$password', email='$email', userAccountID='$userAccountID', loginBy='$loginBy', isActive=$isActive WHERE loginID='$loginID'";
+        $sql = "UPDATE user SET password='$password', email='$email', userAccountID='$userAccountID',
+                loginBy='$loginBy', isActive=$isActive, role=$role WHERE loginID='$loginID'";
 
         if ($conn->query($sql) === true) {
             return true;
